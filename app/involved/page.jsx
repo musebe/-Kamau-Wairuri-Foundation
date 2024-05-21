@@ -10,7 +10,11 @@ const Page = () => {
         <div className='py-24 sm:py-32'>
           <div className='container mx-auto max-w-7xl px-6 lg:px-8'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-              <div className='relative h-106 w-full overflow-hidden rounded-3xl shadow-lg'>
+              <div
+                className='relative w-full overflow-hidden rounded-3xl shadow-lg'
+                style={{ height: '60vh', minHeight: '300px' }}
+              >
+                {/* Using inline style for more control over height */}
                 <Image
                   layout='fill'
                   objectFit='cover'
@@ -30,15 +34,15 @@ const Page = () => {
                 </p>
                 <ul className='mt-4 space-y-2'>
                   <li className='flex items-center'>
-                    <Heart className='text-red-500 dark:text-red-400 mr-2' />{' '}
+                    <Heart className='text-red-500 dark:text-red-400 mr-2' />
                     Volunteer in our activities
                   </li>
                   <li className='flex items-center'>
-                    <DollarSign className='text-green-600 dark:text-green-400 mr-2' />{' '}
+                    <DollarSign className='text-green-600 dark:text-green-400 mr-2' />
                     Donate to support our various projects
                   </li>
                   <li className='flex items-center'>
-                    <Users className='text-blue-600 dark:text-blue-400 mr-2' />{' '}
+                    <Users className='text-blue-600 dark:text-blue-400 mr-2' />
                     Partner with us
                   </li>
                 </ul>
@@ -61,7 +65,6 @@ const Page = () => {
           </div>
         </div>
       </div>
-      {/* Footer should be adjusted if it's being pushed out of the viewpoint, this needs to be handled outside of this code or ensure that `min-h-screen` doesn't stretch beyond the viewport */}
     </div>
   );
 };
