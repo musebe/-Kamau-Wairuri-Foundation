@@ -10,7 +10,7 @@ const Page = () => {
         <div className='py-24 sm:py-32'>
           <div className='container mx-auto max-w-7xl px-6 lg:px-8'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-              <div className='relative h-96 w-full overflow-hidden rounded-3xl shadow-lg'>
+              <div className='relative h-106 w-full overflow-hidden rounded-3xl shadow-lg'>
                 <Image
                   layout='fill'
                   objectFit='cover'
