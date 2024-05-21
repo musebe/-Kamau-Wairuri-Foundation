@@ -1,10 +1,5 @@
-// link (next js)
 import Link from 'next/link';
-
-// next hooks
 import { usePathname } from 'next/navigation';
-
-// framer motion
 import { motion } from 'framer-motion';
 
 const links = [
@@ -15,27 +10,37 @@ const links = [
   { path: '/contact', name: 'contact' },
 ];
 
-const Nav = ({ containerStyles, linkStyles, underlineStyles }) => {
+const Nav = ({
+  containerStyles,
+  linkStyles,
+  underlineStyles,
+  onNavLinkClick,
+}) => {
   const path = usePathname();
+
+  const handleLinkClick = () => {
+    if (onNavLinkClick) {
+      onNavLinkClick();
+    }
+  };
+
   return (
-    <nav className={`${containerStyles}`}>
+    <nav className={containerStyles}>
       {links.map((link, index) => {
         return (
-          <Link
-            href={link.path}
-            key={index}
-            className={`capitalize ${linkStyles}`}
-          >
-            {link.path === path && (
-              <motion.span
-                initial={{ y: '-100%' }}
-                animate={{ y: 0 }}
-                transition={{ type: 'tween' }}
-                layoutId='underline'
-                className={`${underlineStyles}`}
-              />
-            )}
-            {link.name}
+          <Link href={link.path} key={index}>
+            <span className={`capitalize ${linkStyles}`} onClick={handleLinkClick}>
+              {link.path === path && (
+                <motion.span
+                  initial={{ y: '-100%' }}
+                  animate={{ y: 0 }}
+                  transition={{ type: 'tween' }}
+                  layoutId='underline'
+                  className={underlineStyles}
+                />
+              )}
+              {link.name}
+            </span>
           </Link>
         );
       })}

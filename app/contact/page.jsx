@@ -2,7 +2,7 @@ import { MailIcon, HomeIcon, PhoneCall } from 'lucide-react';
 // components
 import Form from '@/components/Form';
 
-const Contact = () => {
+const page = () => {
   return (
     <section>
       <div className='container mx-auto'>
@@ -56,4 +56,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default page;
