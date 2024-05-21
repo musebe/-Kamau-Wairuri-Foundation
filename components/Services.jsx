@@ -1,4 +1,4 @@
-import { GanttChartSquare, Blocks, Gem } from 'lucide-react';
+import { Lightbulb, Award, Users } from 'lucide-react';
 import {
   Card,
   CardContent,
@@ -7,24 +7,24 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-const servicesData = [
+const valuesData = [
   {
-    icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
-    title: 'Web Design',
+    icon: <Lightbulb size={72} strokeWidth={0.8} />,
+    title: 'Vision',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quasi libero quidem sit deserunt fuga.',
+      'A society where access to quality education enables children and adults to fulfill their potential and contribute to the development of their communities.',
   },
   {
-    icon: <Blocks size={72} strokeWidth={0.8} />,
-    title: 'Web Development',
+    icon: <Award size={72} strokeWidth={0.8} />,
+    title: 'Mission',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quasi libero quidem sit deserunt fuga.',
+      'To transform communities in Kenya through education by breaking down barriers of access to formal education, facilitating skills acquisition, and promoting community education.',
   },
   {
-    icon: <Gem size={72} strokeWidth={0.8} />,
-    title: 'App Development',
+    icon: <Users size={72} strokeWidth={0.8} />,
+    title: 'Our Pillars',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quasi libero quidem sit deserunt fuga.',
+      '1. Improving access, retention, and progression of children in formal education in Kenya.\n2. Empowering educators.\n3. Community Education for a changing world.',
   },
 ];
 
@@ -33,18 +33,18 @@ const Services = () => {
     <section className='mb-12 xl:mb-36'>
       <div className='container mx-auto'>
         <h2 className='section-title mb-12 xl:mb-24 text-center mx-auto'>
-          My Services
+          Our Values
         </h2>
-        {/* grid items */}
+        {/* Grid items */}
         <div className='grid xl:grid-cols-3 justify-center gap-y-12 xl:gap-y-24 xl:gap-x-8'>
-          {servicesData.map((item, index) => {
+          {valuesData.map((item, index) => {
             return (
               <Card
-                className='w-full max-w-[424px] h-[300px] flex flex-col pt-16 pb-10 justify-center items-center relative'
+                className='w-full max-w-[424px] h-[360px] flex flex-col pt-16 pb-10 justify-center items-center relative'
                 key={index}
               >
                 <CardHeader className='text-primary absolute -top-[60px]'>
-                  <div className='w-[140px] h-[80px] bg-white dark:bg-background flex justify-center items-center'>
+                  <div className='w-[140px] h-[80px] bg-white dark:bg-background flex justify-center items-center rounded-full shadow-lg'>
                     {item.icon}
                   </div>
                 </CardHeader>
