@@ -38,7 +38,7 @@ const Hero = () => {
               development.
             </p>
             {/* buttons */}
-            <div className='flex flex-col sm:flex-row gap-y-3 gap-x-3 justify-center md:justify-start mb-12'>
+            <div className='flex flex-row gap-y-3 gap-x-3 justify-center md:justify-start mb-12'>
               <Link href='/contact'>
                 <Button className='py-2 px-4 text-sm sm:py-3 sm:px-6 sm:text-base gap-x-2'>
                   Contact us <Send size={18} />
@@ -53,6 +53,7 @@ const Hero = () => {
                 </Button>
               </Link>
             </div>
+
             {/* socials on medium and larger screens */}
             <div className='hidden md:flex gap-x-6 justify-start'>
               <Socials
@@ -71,10 +72,6 @@ const Hero = () => {
               className='rounded-xl shadow-lg'
             />
           </div>
-        </div>
-        {/* icon */}
-        <div className='flex justify-center animate-bounce absolute left-2/4 bottom-44 md:bottom-12 transform -translate-x-1/2'>
-          <RiArrowDownSLine className='text-3xl text-primary' />
         </div>
       </div>
     </section>
