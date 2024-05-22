@@ -1,19 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; 
 import {
   Lightbulb,
   Server,
   BookOpen,
-  CheckCircle,
-  HeartHandshake,
-  Users,
-  Layers,
-  Award,
-  Briefcase,
-  Monitor,
-  UserCheck,
-  Heart,
-  Globe,
+
 } from 'lucide-react';
 
 const WhatWeDoPage = () => {
@@ -28,6 +20,14 @@ const WhatWeDoPage = () => {
               To achieve our aims under the three core pillars, we deploy
               various strategies.
             </p>
+            {/* Call to Action Button */}
+            <div className='mt-6'> {/* Moved the button slightly lower */}
+              <Link href="/gallery" passHref>
+                <span className='inline-block cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full animate-bounce'> {/* Button made larger */}
+                  Visit Our Gallery
+                </span>
+              </Link>
+            </div>
           </div>
           <div className='md:w-1/2 md:order-1'>
             <Image
