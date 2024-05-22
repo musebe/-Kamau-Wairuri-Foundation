@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-
-import { CloudArrowUpIcon, LockClosedIcon } from '@heroicons/react/20/solid';
+import { BookOpen, Users, Globe } from 'lucide-react'; // Import Lucide icons
 
 const page = () => {
   return (
@@ -53,29 +52,36 @@ const page = () => {
         {/* Core Values Section */}
         <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6'>
           <h2 className='text-2xl font-semibold'>Our Core Values</h2>
-          <div className='flex flex-col md:flex-row justify-between mt-4 space-y-4 md:space-y-0'>
-            <p className='md:flex-1'>
-              <strong>
-                Transformational Power of Education & Lifelong learning:
-              </strong>{' '}
-              Education is the key to unlocking the potential of individuals
-              from cradle to grave and transforming communities.
-            </p>
-            <p className='md:flex-1'>
-              <strong>Needs-based Interventions:</strong> Communities understand
-              their needs and resources available. We work with them to identify
-              and prioritise those needs, identify appropriate interventions and
-              implement them.
-            </p>
-            <p className='md:flex-1'>
-              <strong>Collaboration:</strong> We believe in working with
-              existing institutions and community mechanisms to deliver
-              identified interventions.
-            </p>
+          <div className='flex flex-col md:flex-row justify-between mt-4 space-y-4 md:space-y-0 md:space-x-4'>
+            <div className='md:flex-1 flex items-start'>
+              <BookOpen className='h-7 w-7 mr-2 text-blue-500' />
+              <p>
+                <strong>
+                  Transformational Power of Education & Lifelong learning:
+                </strong>
+                Education is the key to unlocking the potential of individuals
+                from cradle to grave and transforming communities.
+              </p>
+            </div>
+            <div className='md:flex-1 flex items-start'>
+              <Globe className='h-7 w-7 mr-2 text-green-500' />
+              <p>
+                <strong>Needs-based Interventions:</strong> Communities
+                understand their needs and resources available. We work with
+                them to identify and prioritise those needs, identify
+                appropriate interventions, and implement them.
+              </p>
+            </div>
+            <div className='md:flex-1 flex items-start'>
+              <Users className='h-7 w-7 mr-2 text-yellow-500' />
+              <p>
+                <strong>Collaboration:</strong> We believe in working with
+                existing institutions and community mechanisms to deliver
+                identified interventions.
+              </p>
+            </div>
           </div>
         </div>
-
-      
       </div>
     </div>
   );
