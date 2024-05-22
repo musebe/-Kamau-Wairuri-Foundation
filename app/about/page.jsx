@@ -1,12 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import {
-  Lightbulb,
-  Server,
-  BookOpen,
-  CheckCircle,
-  HandsHelping,
-} from 'lucide-react';
+
 import { CloudArrowUpIcon, LockClosedIcon } from '@heroicons/react/20/solid';
 
 const page = () => {
@@ -81,104 +75,7 @@ const page = () => {
           </div>
         </div>
 
-        {/* What We Do Section */}
-        <div className='shadow overflow-hidden sm:rounded-lg p-6'>
-          <h2 className='text-2xl font-semibold'>What We Do</h2>
-          <p className='mt-2'>
-            To achieve our aims under the three core pillars, we deploy various
-            strategies.
-          </p>
-          <ul className='list-none pl-4 mt-4 space-y-2'>
-            <li>
-              <strong>
-                Improving access, retention and progression of children in
-                formal education in Kenya:
-              </strong>{' '}
-              We help children and families overcome barriers that hinder
-              access, retention and transition within and across the various
-              levels of formal education. We seek to address these challenges
-              through:
-              <ul className='list-disc pl-6 space-y-1'>
-                <li>
-                  Provision of basic educational supplies such as uniforms,
-                  menstrual health products and learning materials.
-                </li>
-                <li>
-                  Improving the learning environment to facilitate learning
-                  including provision of desks and computers to schools.
-                </li>
-                <li>
-                  Digital Literacy: We offer digital skills training to children
-                  in Kenya through establishing computer labs and running
-                  computer camps.
-                </li>
-                <li>
-                  Mentorship and coaching of students to help students identify
-                  their passions and achieve their goals on topics such as
-                  self-development, career planning, drugs and substance abuse.
-                </li>
-              </ul>
-            </li>
-            <li>
-              <strong>Empowering Educators:</strong> We recognise that teachers
-              are key players within the educational ecosystem and thus key
-              drivers of educational outcomes within communities. However, even
-              as the teaching context and the demands on teachers expand, they
-              are not always provided with the skills and tools they require in
-              order to remain effective in their practice. We focus on:
-              <ul className='list-disc pl-6 space-y-1'>
-                <li>
-                  Mental health and wellbeing of teachers: We provide practical
-                  training to teachers to help them better protect their mental
-                  health and well being.
-                </li>
-                <li>
-                  Evidence-based pedagogy: We provide opportunities for teachers
-                  to improve their pedagogical strategies through observation,
-                  feedback and reflection session. This includes organizing
-                  seminars, workshops and exchange visits in order to help
-                  teachers to enhance their practice, improve learning and
-                  cultivate a passion for learning.
-                </li>
-                <li>
-                  Creating enabling environments for teachers: We support
-                  teachers by providing educational aids that they require for
-                  their classrooms.
-                </li>
-                <li>
-                  Digital skills for Teachers: We equip school teachers with the
-                  necessary tools and skills to be able to impart digital
-                  knowledge to children in classrooms and beyond the classroom.
-                </li>
-              </ul>
-            </li>
-            <li>
-              <strong>Community education for a changing world:</strong> We
-              promote life-long learning by providing community education that
-              empowers community members to contribute meaningfully to local
-              development such as financial literacy, public health, legal
-              rights, climate change & environmental management, drugs and
-              substance abuse, and disputes and conflict management. We do this
-              through:
-              <ul className='list-disc pl-6 space-y-1'>
-                <li>
-                  Public Seminars & Clinics held at the grassroots levels.
-                </li>
-                <li>
-                  Press and Media including publishing articles, producing
-                  podcasts, social media activations.
-                </li>
-                <li>
-                  Exchange programs for various occupational groups including
-                  farmers and teachers.
-                </li>
-                <li>
-                  Sport and Cultural productions as avenues for social change.
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+      
       </div>
     </div>
   );

@@ -5,9 +5,11 @@ import { motion } from 'framer-motion';
 const links = [
   { path: '/', name: 'home' },
   { path: '/about', name: 'about' },
+  { path: '/what-we-do', name: 'what we do' },
   { path: '/involved', name: 'get involved' },
   { path: '/blog', name: 'blog' },
   { path: '/contact', name: 'contact' },
+ 
 ];
 
 const Nav = ({
