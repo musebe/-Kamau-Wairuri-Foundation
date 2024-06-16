@@ -12,18 +12,23 @@ async function getData() {
 
   const data = await client.fetch(query);
 
-  // Group images by tags
+  console.log('Fetched data:', data);
+
+  // Group images by tags with trimmed whitespace
   const groupedData = data.reduce((acc, item) => {
     if (Array.isArray(item.tags)) {
       item.tags.forEach((tag) => {
-        if (!acc[tag]) {
-          acc[tag] = [];
+        const normalizedTag = tag.trim(); // Normalize tag by trimming whitespace
+        if (!acc[normalizedTag]) {
+          acc[normalizedTag] = [];
         }
-        acc[tag].push(item);
+        acc[normalizedTag].push(item);
       });
     }
     return acc;
   }, {});
+
+  console.log('Grouped data:', groupedData);
 
   // Convert to an array of folders with a preview image
   const folders = Object.keys(groupedData).map((tag) => ({
@@ -32,11 +37,15 @@ async function getData() {
     images: groupedData[tag],
   }));
 
+  console.log('Folders:', folders);
+
   return folders;
 }
 
 export default async function Page() {
   const folders = await getData();
+
+  console.log('Resulting folders:', folders);
 
   return (
     <div className='flex flex-col min-h-screen justify-center'>
@@ -50,7 +59,6 @@ export default async function Page() {
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
           {folders.map((folder, idx) => (
             <Folder key={idx} folder={folder} />
-          
           ))}
         </div>
       </div>

@@ -6,8 +6,9 @@ import { Card } from '@/components/ui/card';
 export const revalidate = 30; // Revalidate at most every 30 seconds
 
 async function getData(slug) {
+  const normalizedSlug = decodeURIComponent(slug).trim();
   const query = `
-    *[_type == 'gallery' && "${decodeURIComponent(slug)}" in tags] | order(_createdAt desc) {
+    *[_type == 'gallery' && "${normalizedSlug}" in tags] | order(_createdAt desc) {
       image,
       tags
     }`;
@@ -49,6 +50,7 @@ export default async function Page({ params }) {
                   fill
                   sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                   className='object-cover rounded-t-lg'
+                  priority
                 />
               </div>
             </Card>

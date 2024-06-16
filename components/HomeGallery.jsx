@@ -13,14 +13,15 @@ async function getData() {
 
   const data = await client.fetch(query);
 
-  // Group images by tags
+  // Group images by tags with trimmed whitespace
   const groupedData = data.reduce((acc, item) => {
     if (Array.isArray(item.tags)) {
       item.tags.forEach((tag) => {
-        if (!acc[tag]) {
-          acc[tag] = [];
+        const normalizedTag = tag.trim(); // Normalize tag by trimming whitespace
+        if (!acc[normalizedTag]) {
+          acc[normalizedTag] = [];
         }
-        acc[tag].push(item);
+        acc[normalizedTag].push(item);
       });
     }
     return acc;
@@ -40,7 +41,7 @@ export default async function HomeGallery() {
   const folders = await getData();
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center min-h-screen'>
       <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow'>
         <div className='text-center py-8'>
           <h2 className='text-3xl font-bold mb-2'>Events Gallery</h2>
@@ -51,7 +52,7 @@ export default async function HomeGallery() {
         {folders.length === 0 ? (
           <p>No folders available.</p>
         ) : (
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-8'>
             {folders.map((folder, idx) => (
               <Folder key={idx} folder={folder} />
             ))}

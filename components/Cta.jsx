@@ -25,7 +25,7 @@ const Cta = () => {
               width={500} // Adjust the width as needed
               height={300} // Adjust the height as needed
               className='rounded-xl'
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              style={{ width: 'auto', height: 'auto' }}
             />
           </div>
         </div>
