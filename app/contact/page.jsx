@@ -1,8 +1,20 @@
+"use client"
+
 import { MailIcon, HomeIcon, PhoneCall } from 'lucide-react';
-// components
+import { useEffect, useState } from 'react';
 import Form from '@/components/Form';
 
-const page = () => {
+const Page = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null; // Ou un spinner de chargement
+  }
+
   return (
     <section>
       <div className='container mx-auto'>
@@ -62,4 +74,5 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
+

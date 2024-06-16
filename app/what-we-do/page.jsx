@@ -35,6 +35,7 @@ const WhatWeDoPage = () => {
               width={600}
               height={600}
               className='rounded-lg'
+              priority
             />
           </div>
         </div>

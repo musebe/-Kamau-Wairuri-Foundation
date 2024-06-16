@@ -14,16 +14,18 @@ const Page = () => {
                 className='relative w-full overflow-hidden rounded-3xl shadow-lg'
                 style={{ height: '60vh', minHeight: '300px' }}
               >
-                {/* Using inline style for more control over height */}
                 <Image
-                  layout='fill'
-                  objectFit='cover'
                   src='/involved/involved.jpg'
                   alt='Volunteering'
+                  fill
+                  style={{ objectFit: 'cover' }}
                   className='transition-opacity duration-500 hover:opacity-80'
+                  priority
+                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 />
-                <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black' />
+                <div className='absolute inset-0 bg-gradient-to-b from-transparent to-transparent' />
               </div>
+
               <div className='bg-white dark:bg-gray-900 p-6 rounded-lg shadow-xl'>
                 <h1 className='text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl'>
                   Get Involved
