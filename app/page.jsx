@@ -11,9 +11,7 @@ export default function Home() {
     <main>
       <Hero />
       <Services />
-      {/* Preview of the first 3 or 4 folders of the gallery */}
       <HomeGallery />
-      {/* Modify corevalues to be in separate cards */}
       <Corevalues />
       <Cta />
     </main>

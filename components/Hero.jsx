@@ -21,8 +21,9 @@ const Hero = () => {
                 src='/hero/home.JPG'
                 alt='Kamau Wairuri Foundation'
                 width={350}
-                height={318} // Adjusted for a better aspect ratio
+                height={318}
                 className='rounded-xl shadow-lg'
+                style={{ width: 'auto', height: 'auto' }}
               />
             </div>
             <h1 className='text-4xl sm:text-5xl lg:text-6xl mb-4'>
@@ -69,6 +70,7 @@ const Hero = () => {
               width={550}
               height={500}
               className='rounded-xl shadow-lg'
+              style={{ width: 'auto', height: 'auto' }}
             />
           </div>
         </div>
