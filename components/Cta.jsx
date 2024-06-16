@@ -20,7 +20,7 @@ const Cta = () => {
           </div>
           <div className='md:w-1/2'>
             <Image
-              src='/cta/involved.webp'
+              src='/hero/h2.jpg'
               alt='Get Involved'
               width={500} // Adjust the width as needed
               height={300} // Adjust the height as needed

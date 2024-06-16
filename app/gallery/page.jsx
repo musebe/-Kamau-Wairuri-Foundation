@@ -1,22 +1,43 @@
-import { Card } from '@/components/ui/card';
-import { client, urlFor } from '@/lib/sanity';
-import Image from 'next/image';
+import Folder from '@/components/ Folder';
+import { client } from '@/lib/sanity';
 
 export const revalidate = 30; // Revalidate at most every 30 seconds
 
 async function getData() {
   const query = `
-  *[_type == 'gallery'] | order(_createdAt desc) {
-    image,
-    tags
-  }`;
+    *[_type == 'gallery'] | order(_createdAt desc) {
+      image,
+      tags
+    }`;
 
   const data = await client.fetch(query);
-  return data;
+
+  // Group images by tags
+  const groupedData = data.reduce((acc, item) => {
+    if (Array.isArray(item.tags)) {
+      item.tags.forEach((tag) => {
+        if (!acc[tag]) {
+          acc[tag] = [];
+        }
+        acc[tag].push(item);
+      });
+    }
+    return acc;
+  }, {});
+
+  // Convert to an array of folders with a preview image
+  const folders = Object.keys(groupedData).map((tag) => ({
+    tag,
+    preview: groupedData[tag][0], // First image as preview
+    images: groupedData[tag],
+  }));
+
+  return folders;
 }
 
 export default async function Page() {
-  const data = await getData();
+  const folders = await getData();
+
   return (
     <div className='flex flex-col min-h-screen justify-center'>
       <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow'>
@@ -27,31 +48,9 @@ export default async function Page() {
           </p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-          {data.map((item, idx) => (
-            <Card
-              key={idx}
-              className='w-full h-full overflow-hidden rounded-lg'
-            >
-              <div className='relative w-full h-64 md:h-80'>
-                <Image
-                  src={urlFor(item.image).url()}
-                  alt={item.image.alt || 'Gallery image'}
-                  layout='fill'
-                  objectFit='cover'
-                  className='rounded-t-lg'
-                />
-              </div>
-              {item.tags && (
-                <div className='p-4'>
-                  <div className='text-sm text-gray-500'>Tags:</div>
-                  {item.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className='ml-1 text-sm text-gray-600'>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </Card>
+          {folders.map((folder, idx) => (
+            <Folder key={idx} folder={folder} />
+          
           ))}
         </div>
       </div>

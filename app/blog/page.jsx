@@ -10,9 +10,9 @@ async function getData() {
   const query = `
   *[_type == 'blog'] | order(_createdAt desc) {
     title,
-      smallDescription,
-      "currentSlug": slug.current,
-      titleImage
+    smallDescription,
+    "currentSlug": slug.current,
+    titleImage,
   }`;
 
   const data = await client.fetch(query);

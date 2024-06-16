@@ -18,7 +18,7 @@ const Hero = () => {
                 iconsStyles='text-foreground text-[22px] hover:text-primary transition-all'
               />
               <Image
-                src='/hero/image2.webp'
+                src='/hero/home.JPG'
                 alt='Kamau Wairuri Foundation'
                 width={350}
                 height={318} // Adjusted for a better aspect ratio
@@ -64,7 +64,7 @@ const Hero = () => {
           {/* image on medium and larger screens */}
           <div className='hidden md:flex relative'>
             <Image
-              src='/hero/image2.webp'
+              src='/hero/home.JPG'
               alt='Kamau Wairuri Foundation'
               width={550}
               height={500}

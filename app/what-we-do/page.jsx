@@ -1,12 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link'; 
-import {
-  Lightbulb,
-  Server,
-  BookOpen,
-
-} from 'lucide-react';
+import Link from 'next/link';
+import { Lightbulb, Server, BookOpen, Users, Globe } from 'lucide-react';
 
 const WhatWeDoPage = () => {
   return (
@@ -17,13 +12,17 @@ const WhatWeDoPage = () => {
           <div className='px-6 py-5 md:w-1/2 md:order-2'>
             <h1 className='text-3xl font-semibold'>What We Do</h1>
             <p className='mt-2'>
-              To achieve our aims under the three core pillars, we deploy
-              various strategies.
+              To achieve our mission, we have organized our work under five
+              programs. .
             </p>
             {/* Call to Action Button */}
-            <div className='mt-6'> {/* Moved the button slightly lower */}
-              <Link href="/gallery" passHref>
-                <span className='inline-block cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full animate-bounce'> {/* Button made larger */}
+            <div className='mt-6'>
+              {' '}
+              {/* Moved the button slightly lower */}
+              <Link href='/gallery' passHref>
+                <span className='inline-block cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full animate-bounce'>
+                  {' '}
+                  {/* Button made larger */}
                   Visit Our Gallery
                 </span>
               </Link>
@@ -31,9 +30,9 @@ const WhatWeDoPage = () => {
           </div>
           <div className='md:w-1/2 md:order-1'>
             <Image
-              src='/work/do.webp'
+              src='/about/we_do.jpg'
               alt='What We Do'
-              width={500}
+              width={600}
               height={600}
               className='rounded-lg'
             />
@@ -41,115 +40,104 @@ const WhatWeDoPage = () => {
         </div>
 
         {/* Detailed Section about Activities and Strategies */}
-        <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6'>
-         
-          <div className='space-y-6'>
-            {/* Improving Education Section */}
-            <div>
-              <h3 className='text-xl font-semibold flex items-center'>
-                <Lightbulb className='mr-2 text-yellow-500' />
-                Improving access, retention and progression of children in
-                formal education in Kenya.
+        <div>
+          {/* Digital Skills Program */}
+          <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6 flex items-stretch'>
+            <div className='flex-shrink-0 flex items-center'>
+              <Lightbulb className='h-10 w-10 text-yellow-500' />
+            </div>
+            <div className='ml-4'>
+              <h3 className='text-xl font-semibold'>Digital Skills Program:</h3>
+              <p>
+                Possession of digital Skills is crucial for young people to be
+                able to access opportunities that allow them to fulfil their
+                potential in the present-day world. We are committed to ensuring
+                that young people, especially those in rural areas, have access
+                to equipment and training that allows them to acquire and deepen
+                digital skills. We do this by equipping computer labs in
+                learning facilities and offering training sessions for young
+                people at various stages in partnership with our partners.
+              </p>
+            </div>
+          </div>
+
+          {/* Dignified Learning Program */}
+          <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6 flex items-stretch'>
+            <div className='flex-shrink-0 flex items-center'>
+              <Server className='h-10 w-10 text-blue-500' />
+            </div>
+            <div className='ml-4'>
+              <h3 className='text-xl font-semibold'>
+                Dignified Learning Program:
               </h3>
               <p>
-                By helping children and families overcomes barriers that hinder
-                access, retention and transition within and across the various
-                levels of formal education. We seek to address these challenges
-                through:
+                We support children from under-privileged backgrounds to access
+                formal education in a dignified manner. This includes providing
+                them with school uniforms and dignity packs that include basic
+                hygiene supplies. We also support learning more broadly by
+                providing mentorship sessions to the students through school
+                visits.
               </p>
-              <ul className='list-disc pl-6'>
-                <li>
-                  Provision of basic educational supplies such as uniforms,
-                  menstrual health products and learning materials.
-                </li>
-                <li>
-                  Improving the learning environment to facilitate learning
-                  including provision of desks and computers to schools.
-                </li>
-                <li>
-                  Digital Literacy: We offer digital skills training to children
-                  in Kenya through establishing computer labs and running
-                  computer camps.
-                </li>
-                <li>
-                  Mentorship and coaching of students to help students identify
-                  their passions and achieve their goals on topics such as
-                  self-development, career planning, drugs and substance abuse.
-                </li>
-              </ul>
             </div>
+          </div>
 
-            {/* Empowering Educators Section */}
-            <div>
-              <h3 className='text-xl font-semibold flex items-center'>
-                <Server className='mr-2 text-blue-500' />
-                Empowering Educators.
-              </h3>
+          {/* Empowering Educators */}
+          <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6 flex items-stretch'>
+            <div className='flex-shrink-0 flex items-center'>
+              <Users className='h-10 w-10 text-yellow-500' />
+            </div>
+            <div className='ml-4'>
+              <h3 className='text-xl font-semibold'>Empowering Educators:</h3>
               <p>
                 We recognise that teachers are key players within the
                 educational ecosystem and thus key drivers of educational
                 outcomes within communities. However, even as the teaching
                 context and the demands on teachers expand, they are not always
-                provided with the skills and tools they require in order to
-                remain effective in their practice. We focus on:
+                provided with the skills and tools they require to remain
+                effective in their practice. We run a 5-day teacher’s training
+                fellowship where we train teachers on various topics including
+                mental health and wellbeing, pedagogical strategies, digital
+                skills and child protection.
               </p>
-              <ul className='list-disc pl-6'>
-                <li>
-                  Mental health and wellbeing of teachers: We provide practical
-                  training to teachers to help them better protect their mental
-                  health and well being.
-                </li>
-                <li>
-                  Evidence-based pedagogy: We provide opportunities for teachers
-                  to improve their pedagogical strategies through observation,
-                  feedback and reflection session. This includes organizing
-                  seminars, workshops and exchange visits in order to help
-                  teachers to enhance their practice, improve learning and
-                  cultivate a passion for learning.
-                </li>
-                <li>
-                  Creating enabling environments for teachers: We support
-                  teachers by providing educational aids that they require for
-                  their classrooms.
-                </li>
-                <li>
-                  Digital skills for Teachers: We equip school teachers with the
-                  necessary tools and skills to be able to impart digital
-                  knowledge to children in classrooms and beyond the classroom.
-                </li>
-              </ul>
             </div>
+          </div>
 
-            {/* Community Education Section */}
-            <div>
-              <h3 className='text-xl font-semibold flex items-center'>
-                <BookOpen className='mr-2 text-green-500' />
-                Community education for a changing world.
+          {/* Community Education and Service */}
+          <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6 flex items-stretch'>
+            <div className='flex-shrink-0 flex items-center'>
+              <BookOpen className='h-10 w-10 text-green-500' />
+            </div>
+            <div className='ml-4'>
+              <h3 className='text-xl font-semibold'>
+                Community Education and Service:
               </h3>
               <p>
                 We promote life-long learning by providing community education
-                that empowers community member to contribute meaningfully to
-                local development such as financial literacy, public health,
-                legal rights, climate change & environmental management, drugs
-                and substance abuse, and disputes and conflict management. We do
-                this through:
+                that empowers community members to contribute meaningfully to
+                local development. Through public seminars, clinics, and
+                cultural productions, we educate communities or social groups on
+                relevant topics such as financial literacy, public health, legal
+                rights, climate change & environmental management, drugs and
+                substance abuse, and disputes and conflict management.
               </p>
-              <ul className='list-disc pl-6'>
-                <li>
-                  Public Seminars & Clinics held at the grassroots levels.
-                </li>
-                <li>
-                  Press and Media including publishing articles, producing
-                  podcasts, social media activities.
-                </li>
-                <li>
-                  Exchange programs for various occupational groups including
-                  farmers and teachers.
-                </li>
-                <li>
-                  Sport and Cultural productions as avenues for social change.
-                </li>
-              </ul>
+            </div>
+          </div>
+
+          {/* Youth Skills & Employability */}
+          <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6 flex items-stretch'>
+            <div className='flex-shrink-0 flex items-center'>
+              <Globe className='h-10 w-10 text-green-500' />
+            </div>
+            <div className='ml-4'>
+              <h3 className='text-xl font-semibold'>
+                Youth Skills & Employability:
+              </h3>
+              <p>
+                We support young people in rural areas who have completed higher
+                education to access skills training that prepare them for jobs
+                or self-employment. We do this in partnership with local
+                vocational education providers.
+              </p>
             </div>
           </div>
         </div>

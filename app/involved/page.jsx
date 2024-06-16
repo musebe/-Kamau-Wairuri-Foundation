@@ -18,7 +18,7 @@ const Page = () => {
                 <Image
                   layout='fill'
                   objectFit='cover'
-                  src='/involved/inv.webp'
+                  src='/involved/involved.jpg'
                   alt='Volunteering'
                   className='transition-opacity duration-500 hover:opacity-80'
                 />
@@ -32,34 +32,47 @@ const Page = () => {
                   You are welcome to be part of our mission to transform lives
                   through education. There are many ways to get involved:
                 </p>
-                <ul className='mt-4 space-y-2'>
-                  <li className='flex items-center'>
-                    <Heart className='text-red-500 dark:text-red-400 mr-2' />
-                    Volunteer in our activities
-                  </li>
+                <ul className='mt-4 space-y-4'>
                   <li className='flex items-center'>
                     <DollarSign className='text-green-600 dark:text-green-400 mr-2' />
-                    Donate to support our various projects
+                    <span className='font-semibold'>
+                      Donate to support our various projects
+                    </span>
                   </li>
-                  <li className='flex items-center'>
+                  <li className='ml-8 space-y-2'>
+                    <div>
+                      <Link
+                        href='https://www.mchanga.africa/fundraiser/98856#donatenow'
+                        target='_blank'
+                      >
+                        <span className='inline-flex items-center text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300'>
+                          Donate With Card <ArrowRight className='ml-1' />
+                        </span>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        href='https://www.mchanga.africa/fundraiser/98856#donatenow'
+                        target='_blank'
+                      >
+                        <span className='inline-flex items-center text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300'>
+                          Donate With Paypal <ArrowRight className='ml-1' />
+                        </span>
+                      </Link>
+                    </div>
+                  </li>
+                  <li className='flex items-center mt-4'>
                     <Users className='text-blue-600 dark:text-blue-400 mr-2' />
-                    Partner with us
+                    <span className='font-semibold'>Partner with us</span>
+                  </li>
+                  <li className='ml-8'>
+                    <Link href='/contact'>
+                      <span className='inline-flex items-center text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300'>
+                        Contact Us <ArrowRight className='ml-1' />
+                      </span>
+                    </Link>
                   </li>
                 </ul>
-                <p className='mt-6 text-gray-600 dark:text-gray-400'>
-                  <strong>Send your donations to:</strong>
-                  <br />
-                  M-Pesa Till Number <strong>xxxxxx</strong>
-                  <br />
-                  or to our account at
-                  <br />
-                  Sidian Bank, RiverRoad Branch, A/c No: <strong>_____</strong>.
-                </p>
-                <Link href='/about'>
-                  <span className='mt-6 inline-flex items-center text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300'>
-                    Learn more about our mission <ArrowRight className='ml-1' />
-                  </span>
-                </Link>
               </div>
             </div>
           </div>

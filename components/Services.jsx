@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Lightbulb, Award, Users } from 'lucide-react';
+import { Lightbulb, Award, Users, BookOpen, Globe } from 'lucide-react';
+
 import {
   Card,
   CardContent,
@@ -22,13 +23,13 @@ const Services = () => {
       icon: <Lightbulb size={72} strokeWidth={0.8} />,
       title: 'Vision',
       description:
-        'A society where access to quality education enables children and adults to fulfill their potential and contribute to the development of their communities.',
+        'A society of empowered people who can fulfil their potential and contribute to the development of their   communities.',
     },
     {
       icon: <Award size={72} strokeWidth={0.8} />,
       title: 'Mission',
       description:
-        'To transform communities in Kenya through education by breaking down barriers of access to formal education, facilitating skills acquisition, and promoting community education.',
+        'To transform communities in Kenya through education by breaking down barriers of access to education, facilitating skills acquisition and promoting community education.',
     },
     {
       icon: <Users size={72} strokeWidth={0.8} />,
@@ -66,7 +67,7 @@ const Services = () => {
                   {item.icon}
                 </div>
               </CardHeader>
-              <CardContent className='text-center'>
+              <CardContent className='text-left'>
                 <CardTitle className='mb-4'>{item.title}</CardTitle>
                 <CardDescription className='text-lg'>
                   {typeof item.description === 'string'
@@ -77,6 +78,9 @@ const Services = () => {
             </Card>
           ))}
         </div>
+
+        {/* Additional space between sections */}
+        <div className='my-16' />
       </div>
     </section>
   );

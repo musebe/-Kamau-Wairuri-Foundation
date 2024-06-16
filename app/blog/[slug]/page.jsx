@@ -1,8 +1,7 @@
-// pages/BlogArticle.jsx or wherever you host this component
 import { PortableText } from '@portabletext/react';
-import { client } from '@/lib/sanity'; // Ensure this is configured correctly
-import { Card } from '@/components/ui/card'; // Ensure you have a Card component or similar styled component
-import MyImageComponent from '@/components/MyImageComponent'; // Adjust the import path as necessary
+import { client } from '@/lib/sanity'; 
+import { Card } from '@/components/ui/card'; 
+import MyImageComponent from '@/components/MyImageComponent'; 
 
 export const revalidate = 30; // Revalidate at most every 30 seconds
 
@@ -24,7 +23,7 @@ export default async function BlogArticle({ params }) {
 
   const components = {
     types: {
-      image: MyImageComponent, // Use the imported MyImageComponent
+      image: MyImageComponent,
     },
   };
 
