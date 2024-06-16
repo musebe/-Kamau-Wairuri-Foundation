@@ -1,34 +1,16 @@
 'use client';
 
-import {
-  RiYoutubeFill,
-  RiLinkedinFill,
-  RiGithubFill,
-  RiFacebookFill,
-  RiInstagramFill,
-} from 'react-icons/ri';
+import { RiFacebookFill, RiInstagramFill } from 'react-icons/ri';
 
 import Link from 'next/link';
 
 const icons = [
   {
-    path: '/',
-    name: <RiYoutubeFill />,
-  },
-  {
-    path: '/',
-    name: <RiLinkedinFill />,
-  },
-  {
-    path: '/',
-    name: <RiGithubFill />,
-  },
-  {
-    path: '/',
+    path: 'https://www.facebook.com/share/1vuaHYPbcn1zaueg/?mibextid=LQQJ4d',
     name: <RiFacebookFill />,
   },
   {
-    path: '/',
+    path: 'https://www.instagram.com/kamau_wairuri_foundation?igsh=Y3EyZmw3M3JtNW81',
     name: <RiInstagramFill />,
   },
 ];
@@ -38,7 +20,12 @@ const Socials = ({ containerStyles, iconsStyles }) => {
     <div className={`${containerStyles}`}>
       {icons.map((icon, index) => {
         return (
-          <Link href={icon.path} key={index}>
+          <Link
+            href={icon.path}
+            key={index}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <div className={`${iconsStyles}`}>{icon.name}</div>
           </Link>
         );
