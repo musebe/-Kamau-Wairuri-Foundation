@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Lightbulb, Award, Users, BookOpen, Globe } from 'lucide-react';
+import { Lightbulb, Award, Users } from 'lucide-react';
 
 import {
   Card,
@@ -15,7 +15,7 @@ const Services = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // This will set isClient to true only on the client side after hydration
+    setIsClient(true);
   }, []);
 
   const valuesData = [
@@ -23,7 +23,7 @@ const Services = () => {
       icon: <Lightbulb size={72} strokeWidth={0.8} />,
       title: 'Vision',
       description:
-        'A society of empowered people who can fulfil their potential and contribute to the development of their   communities.',
+        'A society of empowered people who can fulfil their potential and contribute to the development of their communities.',
     },
     {
       icon: <Award size={72} strokeWidth={0.8} />,
@@ -35,16 +35,19 @@ const Services = () => {
       icon: <Users size={72} strokeWidth={0.8} />,
       title: 'Our Pillars',
       description: isClient ? (
-        <ul className='list-none pl-4 space-y-2'>
-          <li>
-            → Improving access, retention, and progression of children in formal
-            education in Kenya.
-          </li>
-          <li>→ Empowering educators.</li>
-          <li>→ Community Education for a changing world.</li>
-        </ul>
+        <div>
+          <p>Our Pillars:</p>
+          <ul className='list-none pl-4 space-y-2'>
+            <li>
+              → Improving access, retention, and progression of children in
+              formal education in Kenya.
+            </li>
+            <li>→ Empowering educators.</li>
+            <li>→ Community Education for a changing world.</li>
+          </ul>
+        </div>
       ) : (
-        'Our Pillars are being loaded...'
+        'Loading...'
       ),
     },
   ];
@@ -55,7 +58,6 @@ const Services = () => {
         <h2 className='section-title mb-12 xl:mb-24 text-center mx-auto'>
           Our Values
         </h2>
-        {/* Grid items */}
         <div className='grid xl:grid-cols-3 justify-center gap-y-12 xl:gap-y-24 xl:gap-x-8'>
           {valuesData.map((item, index) => (
             <Card
@@ -78,8 +80,6 @@ const Services = () => {
             </Card>
           ))}
         </div>
-
-        {/* Additional space between sections */}
         <div className='my-16' />
       </div>
     </section>

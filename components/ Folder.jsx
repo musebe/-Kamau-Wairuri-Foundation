@@ -21,6 +21,7 @@ function Folder({ folder }) {
           src={urlFor(folder.preview.image).url()}
           alt={folder.preview.image.alt || 'Gallery image'}
           fill
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
           className='object-cover rounded-t-lg'
         />
       </div>

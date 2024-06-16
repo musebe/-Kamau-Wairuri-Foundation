@@ -13,7 +13,7 @@ const Cta = () => {
               communities through education.
             </h2>
             <Link href='/involved' passHref>
-              <span className='inline-flex items-center bg-primary text-white hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-primary/50 font-medium rounded-lg text-lg px-6 py-3 cursor-pointer animate-bounce'>
+              <span className='inline-flex items-center bg-primary text-white hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-primary/50 font-medium rounded-lg text-lg px-6 py-3 mt-4 cursor-pointer animate-bounce'>
                 Get Involved <ArrowRightCircle size={24} className='ml-2' />
               </span>
             </Link>
@@ -25,6 +25,7 @@ const Cta = () => {
               width={500} // Adjust the width as needed
               height={300} // Adjust the height as needed
               className='rounded-xl'
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             />
           </div>
         </div>
