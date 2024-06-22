@@ -1,6 +1,6 @@
-"use client"
+'use client';
 
-import { MailIcon, HomeIcon, PhoneCall } from 'lucide-react';
+import { MailIcon, HomeIcon, PhoneIcon } from 'lucide-react'; // Corrected the import
 import { useEffect, useState } from 'react';
 import Form from '@/components/Form';
 
@@ -12,7 +12,7 @@ const Page = () => {
   }, []);
 
   if (!isMounted) {
-    return null; // Ou un spinner de chargement
+    return null; // Or a loading spinner
   }
 
   return (
@@ -29,7 +29,7 @@ const Page = () => {
             <h1 className='h1 max-w-md mb-8'>Let's Work Together.</h1>
             <p className='subtitle max-w-[400px]'>
               Do you have questions or want to learn more about our programs?
-              Get in touch with us today Via info@kamauwairuri.org or via
+              Get in touch with us today via info@kamauwairuri.org or via
               accounts on Social Media.
             </p>
             <p>
@@ -57,10 +57,7 @@ const Page = () => {
               <div>info@kamauwairuri.org</div>
             </div>
             {/* phone */}
-            <div className='flex items-center gap-x-8'>
-              <PhoneCall size={18} className='text-primary' />
-              <div>+254 ......</div>
-            </div>
+           
           </div>
           <Form />
         </div>
@@ -70,4 +67,3 @@ const Page = () => {
 };
 
 export default Page;
-

@@ -43,6 +43,21 @@ const Page = () => {
                   </li>
                   <li className='ml-8 space-y-2'>
                     <div>
+                      <span className='font-semibold text-lg text-indigo-600 dark:text-indigo-400'>
+                        Donate with Mpesa
+                      </span>
+                    </div>
+                    <div>
+                      <span className='block select-all text-sm text-gray-500 dark:text-gray-300'>
+                        Till Number: 5728345
+                      </span>
+                    </div>
+                    <div>
+                      <span className='block text-sm text-gray-500 dark:text-gray-300'>
+                        Name: KAMAU WAIRURI FOUNDATION
+                      </span>
+                    </div>
+                    <div>
                       <Link
                         href='https://www.mchanga.africa/fundraiser/98856#donatenow'
                         target='_blank'
@@ -58,7 +73,7 @@ const Page = () => {
                         target='_blank'
                       >
                         <span className='inline-flex items-center text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300'>
-                          Donate With Paypal <ArrowRight className='ml-1' />
+                          Donate With PayPal <ArrowRight className='ml-1' />
                         </span>
                       </Link>
                     </div>
