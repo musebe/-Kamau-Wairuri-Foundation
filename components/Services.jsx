@@ -36,7 +36,7 @@ const Services = () => {
       title: 'Our Pillars',
       description: isClient ? (
         <div>
-          <ul className='list-none pl-4 space-y-2'>
+          <ul className='list-none pl-4 space-y-3 leading-loose'>
             <li>
               → Improving access, retention, and progression of children in
               formal education in Kenya.
@@ -60,7 +60,7 @@ const Services = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-y-12 md:gap-y-16 md:gap-x-8 xl:gap-y-24 xl:gap-x-8'>
           {valuesData.map((item, index) => (
             <Card
-              className='w-full max-w-[424px] h-[360px] flex flex-col pt-16 pb-10 justify-center items-center relative mx-auto'
+              className='w-full max-w-[424px] h-auto min-h-[460px] flex flex-col pt-16 pb-10 justify-between items-center relative mx-auto'
               key={index}
             >
               <CardHeader className='text-primary absolute -top-[60px]'>
@@ -68,9 +68,9 @@ const Services = () => {
                   {item.icon}
                 </div>
               </CardHeader>
-              <CardContent className='text-left'>
-                <CardTitle className='mb-4'>{item.title}</CardTitle>
-                <CardDescription className='text-lg'>
+              <CardContent className='text-left mt-24'>
+                <CardTitle className='mb-6 text-center'>{item.title}</CardTitle>
+                <CardDescription className='text-lg leading-relaxed'>
                   {item.description}
                 </CardDescription>
               </CardContent>

@@ -1,4 +1,4 @@
-import Folder from '@/components/ Folder';
+import Folder from '@/components/Folder';
 import { client } from '@/lib/sanity';
 
 export const revalidate = 30; // Revalidate at most every 30 seconds

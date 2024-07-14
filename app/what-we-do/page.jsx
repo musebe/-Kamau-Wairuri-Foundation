@@ -10,8 +10,14 @@ const WhatWeDoPage = () => {
         {/* Hero Section with Image of What We Do */}
         <div className='shadow overflow-hidden sm:rounded-lg mb-8 md:mb-12 lg:mb-16 flex flex-col md:flex-row lg:flex-row items-center'>
           <div className='px-6 py-5 md:w-1/2 lg:w-1/2 md:order-2'>
-            <h1 className='text-3xl font-semibold'>What We Do</h1>
-            <p className='mt-2'>
+            <h1 className='text-3xl font-semibold mb-6'>
+              {' '}
+              {/* Increased bottom margin */}
+              What We Do
+            </h1>
+            <p className='leading-loose mb-6'>
+              {' '}
+              {/* Adjusted line height and margin */}
               To achieve our mission, we have organized our work under five
               programs.
             </p>
@@ -44,8 +50,11 @@ const WhatWeDoPage = () => {
               <Lightbulb className='h-10 w-10 text-yellow-500' />
             </div>
             <div className='ml-4'>
-              <h3 className='text-xl font-semibold'>Digital Skills Program:</h3>
-              <p>
+              <h3 className='text-xl font-semibold mb-6'>
+                Digital Skills Program:
+              </h3>{' '}
+              {/* Increased bottom margin */}
+              <p className='leading-loose mb-6'>
                 Possession of digital Skills is crucial for young people to be
                 able to access opportunities that allow them to fulfil their
                 potential in the present-day world. We are committed to ensuring
@@ -64,10 +73,11 @@ const WhatWeDoPage = () => {
               <Server className='h-10 w-10 text-blue-500' />
             </div>
             <div className='ml-4'>
-              <h3 className='text-xl font-semibold'>
+              <h3 className='text-xl font-semibold mb-6'>
                 Dignified Learning Program:
-              </h3>
-              <p>
+              </h3>{' '}
+              {/* Increased bottom margin */}
+              <p className='leading-loose mb-6'>
                 We support children from under-privileged backgrounds to access
                 formal education in a dignified manner. This includes providing
                 them with school uniforms and dignity packs that include basic
@@ -84,8 +94,11 @@ const WhatWeDoPage = () => {
               <Users className='h-10 w-10 text-yellow-500' />
             </div>
             <div className='ml-4'>
-              <h3 className='text-xl font-semibold'>Empowering Educators:</h3>
-              <p>
+              <h3 className='text-xl font-semibold mb-6'>
+                Empowering Educators:
+              </h3>{' '}
+              {/* Increased bottom margin */}
+              <p className='leading-loose mb-6'>
                 We recognize that teachers are key players within the
                 educational ecosystem and thus key drivers of educational
                 outcomes within communities. However, even as the teaching
@@ -105,10 +118,11 @@ const WhatWeDoPage = () => {
               <BookOpen className='h-10 w-10 text-green-500' />
             </div>
             <div className='ml-4'>
-              <h3 className='text-xl font-semibold'>
+              <h3 className='text-xl font-semibold mb-6'>
                 Community Education and Service:
-              </h3>
-              <p>
+              </h3>{' '}
+              {/* Increased bottom margin */}
+              <p className='leading-loose mb-6'>
                 We promote life-long learning by providing community education
                 that empowers community members to contribute meaningfully to
                 local development. Through public seminars, clinics, and
@@ -126,10 +140,11 @@ const WhatWeDoPage = () => {
               <Globe className='h-10 w-10 text-green-500' />
             </div>
             <div className='ml-4'>
-              <h3 className='text-xl font-semibold'>
+              <h3 className='text-xl font-semibold mb-6'>
                 Youth Skills & Employability:
-              </h3>
-              <p>
+              </h3>{' '}
+              {/* Increased bottom margin */}
+              <p className='leading-loose mb-6'>
                 We support young people in rural areas who have completed higher
                 education to access skills training that prepare them for jobs
                 or self-employment. We do this in partnership with local

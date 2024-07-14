@@ -1,10 +1,11 @@
 'use client';
+
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { urlFor } from '@/lib/sanity';
 
-function Folder({ folder }) {
+const Folder = ({ folder }) => {
   const router = useRouter();
 
   const handleClick = () => {
@@ -32,6 +33,6 @@ function Folder({ folder }) {
       </div>
     </Card>
   );
-}
+};
 
 export default Folder;
