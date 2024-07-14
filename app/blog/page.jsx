@@ -25,8 +25,14 @@ export default async function Page() {
     <div className='flex flex-col min-h-screen justify-center'>
       <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow'>
         <div className='text-center py-8'>
-          <h1 className='text-3xl font-bold mb-2'>From the Blog</h1>
-          <p className='text-lg text-gray-600'>
+          <h1 className='text-3xl font-bold mb-6'>
+            {' '}
+            {/* Increased bottom margin */}
+            From the Blog
+          </h1>
+          <p className='text-lg text-gray-600 leading-loose mb-6'>
+            {' '}
+            {/* Adjusted line height and margin */}
             Discover how we are making a difference with our community
             initiatives.
           </p>
@@ -48,8 +54,14 @@ export default async function Page() {
                 />
               </div>
               <CardContent className='flex-grow p-4'>
-                <h3 className='text-lg font-bold line-clamp-4'>{post.title}</h3>
-                <p className='text-sm mt-2 text-gray-600 dark:text-gray-300 line-clamp-3'>
+                <h3 className='text-lg font-bold leading-loose mb-6 line-clamp-4'>
+                  {' '}
+                  {/* Adjusted line height and margin */}
+                  {post.title}
+                </h3>
+                <p className='text-sm mt-2 text-gray-600 dark:text-gray-300 leading-loose mb-6 line-clamp-3'>
+                  {' '}
+                  {/* Adjusted line height and margin */}
                   {post.smallDescription}
                 </p>
                 <div className='mt-auto'>
