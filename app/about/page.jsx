@@ -4,11 +4,11 @@ import Image from 'next/image';
 const Page = () => {
   return (
     <div className='min-h-screen flex flex-col'>
-      <div className='flex-grow py-12 px-4 sm:px-6 lg:px-8'>
+      <div className='flex-grow py-12 px-4 sm:px-6 md:px-6 lg:px-8'>
         <div className='max-w-screen-xl mx-auto'>
           {/* Hero Section with Image of the Founder */}
-          <div className='shadow overflow-hidden sm:rounded-lg mb-8 flex flex-col md:flex-row items-center mt-8'>
-            <div className='md:w-1/2'>
+          <div className='shadow overflow-hidden sm:rounded-lg mb-8 flex flex-col md:flex-row lg:flex-row items-center mt-8'>
+            <div className='w-full md:w-1/2 lg:w-1/2'>
               <Image
                 src='/about/about.jpg'
                 alt='Dr. Kamau Wairuri'
@@ -19,7 +19,7 @@ const Page = () => {
                 priority
               />
             </div>
-            <div className='px-6 py-5 md:w-1/2'>
+            <div className='px-6 py-5 w-full md:w-1/2 lg:w-1/2'>
               <h1 className='text-3xl font-semibold'>
                 About The Kamau Wairuri Foundation
               </h1>
@@ -33,7 +33,7 @@ const Page = () => {
                 Patron, Dr Kamau Wairuri, a well-respected scholar and
                 consultant in the areas of research, strategy and public policy.
                 He credits his achievements to the seed of education that was
-                sown at Mjini Primary School in Murang’a and nurtured at Starehe
+                sown at Mjini Primary School in Miranda and nurtured at Starehe
                 Boys’ Center in Nairobi. He continued his academic pursuits,
                 achieving remarkable success in higher education both in Kenya
                 (University of Nairobi) and abroad (University of Oxford and

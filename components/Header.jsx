@@ -11,15 +11,33 @@ import { usePathname } from 'next/navigation';
 const Header = () => {
   const [header, setHeader] = useState(false);
   const pathname = usePathname();
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const scrollYPos = window.addEventListener('scroll', () => {
-      window.scrollY > 50 ? setHeader(true) : setHeader(false);
-    });
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Small screens are considered less than 768px
+    };
 
-    // remove event
-    return () => window.removeEventListener('scroll', scrollYPos);
-  });
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHeader(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header
@@ -34,16 +52,20 @@ const Header = () => {
           <Logo />
           <div className='flex items-center gap-x-6'>
             {/* nav */}
-            <Nav
-              containerStyles='hidden xl:flex gap-x-8 items-center'
-              linkStyles='relative hover:text-primary transition-all'
-              underlineStyles='absolute left-0 top-full h-[2px] bg-primary w-full'
-            />
+            {!isMobile && (
+              <Nav
+                containerStyles='hidden md:flex gap-x-8 items-center'
+                linkStyles='relative hover:text-primary transition-all'
+                underlineStyles='absolute left-0 top-full h-[2px] bg-primary w-full'
+              />
+            )}
             <ThemeToggler />
             {/* mobile nav */}
-            <div className='xl:hidden'>
-              <MobileNav />
-            </div>
+            {isMobile && (
+              <div className='md:hidden'>
+                <MobileNav />
+              </div>
+            )}
           </div>
         </div>
       </div>

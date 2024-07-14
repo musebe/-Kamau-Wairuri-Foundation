@@ -1,101 +1,67 @@
-import React from 'react';
-import Image from 'next/image';
-import { Heart, DollarSign, Users, ArrowRight } from 'lucide-react'; // Using Lucide icons
-import Link from 'next/link'; // Ensure to import Link from Next.js
+'use client';
+
+import { MailIcon } from 'lucide-react'; // Corrected the import
+import { useEffect, useState } from 'react';
+import Form from '@/components/Form';
 
 const Page = () => {
-  return (
-    <div className='flex flex-col min-h-screen bg-gray-100 dark:bg-gray-800'>
-      <div className='flex-grow'>
-        <div className='py-24 sm:py-32'>
-          <div className='container mx-auto max-w-7xl px-6 lg:px-8'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-              <div
-                className='relative w-full overflow-hidden rounded-3xl shadow-lg'
-                style={{ height: '60vh', minHeight: '300px' }}
-              >
-                <Image
-                  src='/involved/involved.jpg'
-                  alt='Volunteering'
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  className='transition-opacity duration-500 hover:opacity-80'
-                  priority
-                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                />
-                <div className='absolute inset-0 bg-gradient-to-b from-transparent to-transparent' />
-              </div>
+  const [isMounted, setIsMounted] = useState(false);
 
-              <div className='bg-white dark:bg-gray-900 p-6 rounded-lg shadow-xl'>
-                <h1 className='text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl'>
-                  Get Involved
-                </h1>
-                <p className='mt-4 text-lg text-gray-700 dark:text-gray-300'>
-                  You are welcome to be part of our mission to transform lives
-                  through education. There are many ways to get involved:
-                </p>
-                <ul className='mt-4 space-y-4'>
-                  <li className='flex items-center'>
-                    <DollarSign className='text-green-600 dark:text-green-400 mr-2' />
-                    <span className='font-semibold'>
-                      Donate to support our various projects
-                    </span>
-                  </li>
-                  <li className='ml-8 space-y-2'>
-                    <div>
-                      <span className='font-semibold text-lg text-indigo-600 dark:text-indigo-400'>
-                        Donate with Mpesa
-                      </span>
-                    </div>
-                    <div>
-                      <span className='block select-all text-sm text-gray-500 dark:text-gray-300'>
-                        Till Number: 5728345
-                      </span>
-                    </div>
-                    <div>
-                      <span className='block text-sm text-gray-500 dark:text-gray-300'>
-                        Name: KAMAU WAIRURI FOUNDATION
-                      </span>
-                    </div>
-                    <div>
-                      <Link
-                        href='https://www.mchanga.africa/fundraiser/98856#donatenow'
-                        target='_blank'
-                      >
-                        <span className='inline-flex items-center text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300'>
-                          Donate With Card <ArrowRight className='ml-1' />
-                        </span>
-                      </Link>
-                    </div>
-                    <div>
-                      <Link
-                        href='https://www.mchanga.africa/fundraiser/98856#donatenow'
-                        target='_blank'
-                      >
-                        <span className='inline-flex items-center text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300'>
-                          Donate With PayPal <ArrowRight className='ml-1' />
-                        </span>
-                      </Link>
-                    </div>
-                  </li>
-                  <li className='flex items-center mt-4'>
-                    <Users className='text-blue-600 dark:text-blue-400 mr-2' />
-                    <span className='font-semibold'>Partner with us</span>
-                  </li>
-                  <li className='ml-8'>
-                    <Link href='/contact'>
-                      <span className='inline-flex items-center text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300'>
-                        Contact Us <ArrowRight className='ml-1' />
-                      </span>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null; // Or a loading spinner
+  }
+
+  return (
+    <section>
+      <div className='container mx-auto'>
+        {/* text & illustration */}
+        <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-8 pt-12 md:h-[480px] lg:h-[480px] mb-6 md:mb-24 lg:mb-24'>
+          {/* text */}
+          <div className='flex flex-col justify-center'>
+            <div className='flex items-center gap-x-4 text-primary text-lg mb-4'>
+              <span className='w-[30px] h-[2px] bg-primary'></span>
+              Say Hello 👋
             </div>
+            <h1 className='h1 max-w-md mb-8'>Let's Work Together.</h1>
+            <p className='subtitle max-w-[400px]'>
+              Do you have questions or want to learn more about our programs?
+              Get in touch with us today via info@kamauwairuri.org or via
+              accounts on Social Media.
+            </p>
+            <p>
+              The Kamau Wairuri Foundation is committed to creating lasting
+              change through education. Together, we can build a brighter future
+              for all!
+            </p>
+          </div>
+          {/* illustration */}
+          <div className='hidden md:flex lg:flex w-full'>
+            <img
+              src='/contact/contact.jpg'
+              alt='Contact Illustration'
+              className='w-full h-auto bg-top bg-no-repeat'
+            />
           </div>
         </div>
+        {/* info text & form */}
+        <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-24 md:mb-32 lg:mb-32'>
+          {/* info text */}
+          <div className='flex flex-col gap-y-4 md:gap-y-14 lg:gap-y-14 mb-12 md:mb-24 lg:mb-24 text-base md:text-lg lg:text-lg'>
+            {/* mail */}
+            <div className='flex items-center gap-x-8'>
+              <MailIcon size={18} className='text-primary' />
+              <div>info@kamauwairuri.org</div>
+            </div>
+            {/* phone */}
+          </div>
+          <Form />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

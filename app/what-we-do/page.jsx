@@ -5,30 +5,26 @@ import { Lightbulb, Server, BookOpen, Users, Globe } from 'lucide-react';
 
 const WhatWeDoPage = () => {
   return (
-    <div className='py-12 px-4 sm:px-6 lg:px-8'>
+    <div className='py-12 px-4 sm:px-6 md:px-6 lg:px-8'>
       <div className='max-w-screen-xl mx-auto'>
         {/* Hero Section with Image of What We Do */}
-        <div className='shadow overflow-hidden sm:rounded-lg mb-8 flex flex-col md:flex-row items-center'>
-          <div className='px-6 py-5 md:w-1/2 md:order-2'>
+        <div className='shadow overflow-hidden sm:rounded-lg mb-8 md:mb-12 lg:mb-16 flex flex-col md:flex-row lg:flex-row items-center'>
+          <div className='px-6 py-5 md:w-1/2 lg:w-1/2 md:order-2'>
             <h1 className='text-3xl font-semibold'>What We Do</h1>
             <p className='mt-2'>
               To achieve our mission, we have organized our work under five
-              programs. .
+              programs.
             </p>
             {/* Call to Action Button */}
             <div className='mt-6'>
-              {' '}
-              {/* Moved the button slightly lower */}
               <Link href='/gallery' passHref>
                 <span className='inline-block cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full animate-bounce'>
-                  {' '}
-                  {/* Button made larger */}
                   Visit Our Gallery
                 </span>
               </Link>
             </div>
           </div>
-          <div className='md:w-1/2 md:order-1'>
+          <div className='md:w-1/2 lg:w-1/2 md:order-1'>
             <Image
               src='/about/we_do.jpg'
               alt='What We Do'
@@ -43,7 +39,7 @@ const WhatWeDoPage = () => {
         {/* Detailed Section about Activities and Strategies */}
         <div>
           {/* Digital Skills Program */}
-          <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6 flex items-stretch'>
+          <div className='shadow overflow-hidden sm:rounded-lg mb-8 md:mb-12 lg:mb-16 p-6 flex items-stretch'>
             <div className='flex-shrink-0 flex items-center'>
               <Lightbulb className='h-10 w-10 text-yellow-500' />
             </div>
@@ -63,7 +59,7 @@ const WhatWeDoPage = () => {
           </div>
 
           {/* Dignified Learning Program */}
-          <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6 flex items-stretch'>
+          <div className='shadow overflow-hidden sm:rounded-lg mb-8 md:mb-12 lg:mb-16 p-6 flex items-stretch'>
             <div className='flex-shrink-0 flex items-center'>
               <Server className='h-10 w-10 text-blue-500' />
             </div>
@@ -83,14 +79,14 @@ const WhatWeDoPage = () => {
           </div>
 
           {/* Empowering Educators */}
-          <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6 flex items-stretch'>
+          <div className='shadow overflow-hidden sm:rounded-lg mb-8 md:mb-12 lg:mb-16 p-6 flex items-stretch'>
             <div className='flex-shrink-0 flex items-center'>
               <Users className='h-10 w-10 text-yellow-500' />
             </div>
             <div className='ml-4'>
               <h3 className='text-xl font-semibold'>Empowering Educators:</h3>
               <p>
-                We recognise that teachers are key players within the
+                We recognize that teachers are key players within the
                 educational ecosystem and thus key drivers of educational
                 outcomes within communities. However, even as the teaching
                 context and the demands on teachers expand, they are not always
@@ -104,7 +100,7 @@ const WhatWeDoPage = () => {
           </div>
 
           {/* Community Education and Service */}
-          <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6 flex items-stretch'>
+          <div className='shadow overflow-hidden sm:rounded-lg mb-8 md:mb-12 lg:mb-16 p-6 flex items-stretch'>
             <div className='flex-shrink-0 flex items-center'>
               <BookOpen className='h-10 w-10 text-green-500' />
             </div>
@@ -125,7 +121,7 @@ const WhatWeDoPage = () => {
           </div>
 
           {/* Youth Skills & Employability */}
-          <div className='shadow overflow-hidden sm:rounded-lg mb-8 p-6 flex items-stretch'>
+          <div className='shadow overflow-hidden sm:rounded-lg mb-8 md:mb-12 lg:mb-16 p-6 flex items-stretch'>
             <div className='flex-shrink-0 flex items-center'>
               <Globe className='h-10 w-10 text-green-500' />
             </div>

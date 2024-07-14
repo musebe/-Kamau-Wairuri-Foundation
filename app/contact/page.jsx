@@ -1,6 +1,6 @@
 'use client';
 
-import { MailIcon, HomeIcon, PhoneIcon } from 'lucide-react'; // Corrected the import
+import { MailIcon } from 'lucide-react'; // Corrected the import
 import { useEffect, useState } from 'react';
 import Form from '@/components/Form';
 
@@ -19,7 +19,7 @@ const Page = () => {
     <section>
       <div className='container mx-auto'>
         {/* text & illustration */}
-        <div className='grid xl:grid-cols-2 pt-12 xl:h-[480px] mb-6 xl:mb-24'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-2 pt-12 md:h-[480px] lg:h-[480px] mb-6 md:mb-24 lg:mb-24'>
           {/* text */}
           <div className='flex flex-col justify-center'>
             <div className='flex items-center gap-x-4 text-primary text-lg mb-4'>
@@ -39,7 +39,7 @@ const Page = () => {
             </p>
           </div>
           {/* illustration */}
-          <div className='hidden xl:flex w-full'>
+          <div className='hidden md:flex lg:flex w-full'>
             <img
               src='/contact/contact.jpg'
               alt='Contact Illustration'
@@ -48,16 +48,15 @@ const Page = () => {
           </div>
         </div>
         {/* info text & form */}
-        <div className='grid xl:grid-cols-2 mb-24 xl:mb-32'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-2 mb-24 md:mb-32 lg:mb-32'>
           {/* info text */}
-          <div className='flex flex-col gap-y-4 xl:gap-y-14 mb-12 xl:mb-24 text-base xl:text-lg'>
+          <div className='flex flex-col gap-y-4 md:gap-y-14 lg:gap-y-14 mb-12 md:mb-24 lg:mb-24 text-base md:text-lg lg:text-lg'>
             {/* mail */}
             <div className='flex items-center gap-x-8'>
               <MailIcon size={18} className='text-primary' />
               <div>info@kamauwairuri.org</div>
             </div>
             {/* phone */}
-           
           </div>
           <Form />
         </div>

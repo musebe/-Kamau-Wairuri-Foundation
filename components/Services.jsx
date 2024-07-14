@@ -36,7 +36,6 @@ const Services = () => {
       title: 'Our Pillars',
       description: isClient ? (
         <div>
-          <p>Our Pillars:</p>
           <ul className='list-none pl-4 space-y-2'>
             <li>
               → Improving access, retention, and progression of children in
@@ -58,10 +57,10 @@ const Services = () => {
         <h2 className='section-title mb-12 xl:mb-24 text-center mx-auto'>
           Our Values
         </h2>
-        <div className='grid xl:grid-cols-3 justify-center gap-y-12 xl:gap-y-24 xl:gap-x-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-y-12 md:gap-y-16 md:gap-x-8 xl:gap-y-24 xl:gap-x-8'>
           {valuesData.map((item, index) => (
             <Card
-              className='w-full max-w-[424px] h-[360px] flex flex-col pt-16 pb-10 justify-center items-center relative'
+              className='w-full max-w-[424px] h-[360px] flex flex-col pt-16 pb-10 justify-center items-center relative mx-auto'
               key={index}
             >
               <CardHeader className='text-primary absolute -top-[60px]'>
@@ -72,9 +71,7 @@ const Services = () => {
               <CardContent className='text-left'>
                 <CardTitle className='mb-4'>{item.title}</CardTitle>
                 <CardDescription className='text-lg'>
-                  {typeof item.description === 'string'
-                    ? item.description
-                    : item.description}
+                  {item.description}
                 </CardDescription>
               </CardContent>
             </Card>
