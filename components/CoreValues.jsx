@@ -1,64 +1,63 @@
 import React from 'react';
 import { BookOpen, Globe, Users } from 'lucide-react';
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+
 const CoreValues = () => {
+  const coreValuesData = [
+    {
+      icon: <BookOpen size={72} strokeWidth={0.8} className='text-blue-500' />,
+      title: 'Transformational Power of Education & Lifelong Learning',
+      description:
+        'Education is the key to unlocking the potential of individuals from cradle to grave and transforming communities.',
+    },
+    {
+      icon: <Globe size={72} strokeWidth={0.8} className='text-green-500' />,
+      title: 'Needs-based Interventions',
+      description:
+        'Communities understand their needs and resources available. We work with them to identify and prioritize those needs, identify appropriate interventions, and implement them.',
+    },
+    {
+      icon: <Users size={72} strokeWidth={0.8} className='text-yellow-500' />,
+      title: 'Collaboration',
+      description:
+        'We believe in working with existing institutions and community mechanisms to deliver identified interventions.',
+    },
+  ];
+
   return (
-    <section className='mx-4 sm:mx-auto p-6 mt-16'>
-      {' '}
-      {/* Further increased top margin */}
-      <h2 className='text-3xl font-semibold text-center text-gray-900 dark:text-gray-100 mb-8'>
-        {' '}
-        {/* Further increased bottom margin */}
-        Our Core Values
-      </h2>
-      <div className='grid grid-cols-1 sm:grid-cols-3 gap-8'>
-        {' '}
-        {/* Increased gap between columns */}
-        <div className='bg-white dark:bg-gray-800 rounded-lg shadow-lg p-10'>
-          {' '}
-          {/* Increased padding */}
-          <BookOpen className='h-10 w-10 mb-6 text-blue-500' />{' '}
-          {/* Increased bottom margin */}
-          <p className='text-lg font-medium text-gray-700 dark:text-gray-300 leading-loose mb-8'>
-            {' '}
-            {/* Further increased margin and line height */}
-            <strong className='text-gray-900 dark:text-gray-100'>
-              Transformational Power of Education & Lifelong Learning:
-            </strong>{' '}
-            Education is the key to unlocking the potential of individuals from
-            cradle to grave and transforming communities.
-          </p>
-        </div>
-        <div className='bg-white dark:bg-gray-800 rounded-lg shadow-lg p-10'>
-          {' '}
-          {/* Increased padding */}
-          <Globe className='h-10 w-10 mb-6 text-green-500' />{' '}
-          {/* Increased bottom margin */}
-          <p className='text-lg font-medium text-gray-700 dark:text-gray-300 leading-loose mb-8'>
-            {' '}
-            {/* Further increased margin and line height */}
-            <strong className='text-gray-900 dark:text-gray-100'>
-              Needs-based Interventions:
-            </strong>{' '}
-            Communities understand their needs and resources available. We work
-            with them to identify and prioritize those needs, identify
-            appropriate interventions, and implement them.
-          </p>
-        </div>
-        <div className='bg-white dark:bg-gray-800 rounded-lg shadow-lg p-10'>
-          {' '}
-          {/* Increased padding */}
-          <Users className='h-10 w-10 mb-6 text-yellow-500' />{' '}
-          {/* Increased bottom margin */}
-          <p className='text-lg font-medium text-gray-700 dark:text-gray-300 leading-loose mb-8'>
-            {' '}
-            {/* Further increased margin and line height */}
-            <strong className='text-gray-900 dark:text-gray-100'>
-              Collaboration:
-            </strong>{' '}
-            We believe in working with existing institutions and community
-            mechanisms to deliver identified interventions.
-          </p>
+    <section className='py-12 md:py-24'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+        <h2 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-12 text-center text-foreground'>
+          Our Core Values
+        </h2>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 md:gap-y-16 gap-x-8'>
+          {coreValuesData.map((item, index) => (
+            <Card
+              className='w-full max-w-[424px] mx-auto flex flex-col pt-12 pb-8'
+              key={index}
+            >
+              <CardHeader className='text-primary mb-8'>
+                <div className='w-[140px] h-[80px] bg-white dark:bg-background flex justify-center items-center rounded-full shadow-lg mx-auto'>
+                  {item.icon}
+                </div>
+              </CardHeader>
+              <CardContent className='text-left'>
+                <CardTitle className='mb-4 text-center text-2xl font-semibold text-foreground'>
+                  {item.title}
+                </CardTitle>
+                <CardDescription className='text-lg leading-relaxed text-foreground'>
+                  {item.description}
+                </CardDescription>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

@@ -12,8 +12,6 @@ async function getData() {
 
   const data = await client.fetch(query);
 
-  console.log('Fetched data:', data);
-
   // Group images by tags with trimmed whitespace
   const groupedData = data.reduce((acc, item) => {
     if (Array.isArray(item.tags)) {
@@ -28,8 +26,6 @@ async function getData() {
     return acc;
   }, {});
 
-  console.log('Grouped data:', groupedData);
-
   // Convert to an array of folders with a preview image
   const folders = Object.keys(groupedData).map((tag) => ({
     tag,
@@ -37,31 +33,30 @@ async function getData() {
     images: groupedData[tag],
   }));
 
-  console.log('Folders:', folders);
-
   return folders;
 }
 
 export default async function Page() {
   const folders = await getData();
 
-  console.log('Resulting folders:', folders);
-
   return (
     <div className='flex flex-col min-h-screen justify-center'>
       <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow'>
-        <div className='text-center py-8'>
-          <h1 className='text-3xl font-bold mb-2'>Gallery</h1>
-          <p className='text-lg text-gray-600'>
+        <div className='text-center py-12'>
+          <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground'>
+            Gallery
+          </h1>
+          <p className='text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto'>
             Explore our curated gallery of images.
           </p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {folders.map((folder, idx) => (
             <Folder key={idx} folder={folder} />
           ))}
         </div>
       </div>
+      <div className='py-12'></div> {/* Space before footer */}
     </div>
   );
 }

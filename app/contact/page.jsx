@@ -1,6 +1,6 @@
 'use client';
 
-import { MailIcon } from 'lucide-react'; // Corrected the import
+import { MailIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Form from '@/components/Form';
 
@@ -16,59 +16,55 @@ const Page = () => {
   }
 
   return (
-    <section>
-      <div className='container mx-auto'>
-        {/* text & illustration */}
-        <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-8 pt-12 md:h-[480px] lg:h-[480px] mb-6 md:mb-24 lg:mb-24'>
-          {/* text */}
+    <section className='py-12 md:py-24'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+        {/* Text & Illustration */}
+        <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12'>
+          {/* Text */}
           <div className='flex flex-col justify-center'>
             <div className='flex items-center gap-x-4 text-primary text-lg mb-4'>
               <span className='w-[30px] h-[2px] bg-primary'></span>
               Say Hello 👋
             </div>
-            <h1 className='h1 max-w-md mb-6'>
-              {' '}
-              {/* Increased bottom margin */}
+            <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground'>
               Let's Work Together.
             </h1>
-            <p className='subtitle max-w-[400px] leading-loose mb-6'>
-              {' '}
-              {/* Adjusted line height and margin */}
+            <p className='text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-6 max-w-md'>
               Do you have questions or want to learn more about our programs?
-              Get in touch with us today via info@kamauwairuri.org or via
-              accounts on Social Media.
+              Get in touch with us today via info@kamauwairuri.org or our social
+              media accounts.
             </p>
-            <p className='leading-loose mb-6'>
-              {' '}
-              {/* Adjusted line height and margin */}
+            <p className='text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-6 max-w-md'>
               The Kamau Wairuri Foundation is committed to creating lasting
               change through education. Together, we can build a brighter future
               for all!
             </p>
           </div>
-          {/* illustration */}
+          {/* Illustration */}
           <div className='hidden md:flex lg:flex w-full'>
             <img
               src='/contact/contact.jpg'
               alt='Contact Illustration'
-              className='w-full h-auto bg-top bg-no-repeat'
+              className='w-full h-auto rounded-lg shadow-lg'
             />
           </div>
         </div>
-        {/* info text & form */}
-        <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-24 md:mb-32 lg:mb-32'>
-          {/* info text */}
-          <div className='flex flex-col gap-y-4 md:gap-y-14 lg:gap-y-14 mb-12 md:mb-24 lg:mb-24 text-base md:text-lg lg:text-lg'>
-            {/* mail */}
-            <div className='flex items-center gap-x-8'>
-              <MailIcon size={18} className='text-primary' />
-              <div>info@kamauwairuri.org</div>
+        {/* Info Text & Form */}
+        <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12'>
+          {/* Info Text */}
+          <div className='flex flex-col gap-y-6 text-lg'>
+            <div className='flex items-center gap-x-4'>
+              <MailIcon size={24} className='text-primary' />
+              <span className='text-gray-800 dark:text-gray-200'>
+                info@kamauwairuri.org
+              </span>
             </div>
-            {/* phone */}
           </div>
+          {/* Form */}
           <Form />
         </div>
       </div>
+      <div className='py-12'></div> {/* Space before footer */}
     </section>
   );
 };

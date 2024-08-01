@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { client } from '@/lib/sanity';
 import Folder from './Folder';
+import { Button } from './ui/button'; 
 
 export const revalidate = 30; // Revalidate at most every 30 seconds
 
@@ -41,28 +42,30 @@ export default async function HomeGallery() {
   const folders = await getData();
 
   return (
-    <div className='flex flex-col items-center'>
-      <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center py-4'>
-          <h2 className='text-3xl font-bold mb-2'>Events Gallery</h2>
-          <p className='text-lg text-gray-600'>
+    <div className='py-12 md:py-24'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='text-center mb-12'>
+          <h2 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground'>
+            Events Gallery
+          </h2>
+          <p className='text-lg sm:text-xl text-gray-600 mb-4'>
             Explore a preview of our curated gallery of events.
           </p>
         </div>
         {folders.length === 0 ? (
-          <p>No folders available.</p>
+          <p className='text-lg text-foreground'>No folders available.</p>
         ) : (
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-4'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {folders.map((folder, idx) => (
               <Folder key={idx} folder={folder} />
             ))}
           </div>
         )}
-        <div className='text-center mt-4'>
+        <div className='text-center mt-12'>
           <Link href='/gallery'>
-            <span className='inline-block px-6 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 cursor-pointer'>
+            <Button className='py-2 px-4 text-sm sm:py-3 sm:px-6 sm:text-base gap-x-2'>
               View All Events
-            </span>
+            </Button>
           </Link>
         </div>
       </div>

@@ -1,30 +1,35 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRightCircle } from 'lucide-react'; // Import an appropriate icon for a call to action
+import { ArrowRightCircle } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Cta = () => {
   return (
-    <section className='py-24 bg-tertiary dark:bg-secondary/40'>
+    <section className='py-12 md:py-24 bg-tertiary dark:bg-secondary/40'>
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex flex-col-reverse md:flex-row items-center justify-between text-center md:text-left'>
           <div className='md:w-1/2 mt-8 md:mt-0'>
-            <h2 className='text-3xl font-semibold mb-4'>
+            <h2 className='text-3xl sm:text-4xl lg:text-5xl mb-4 text-foreground'>
               Want to contribute to a better future? Join us in empowering
               communities through education.
             </h2>
+            <p className='text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-6'>
+              Your involvement can make a significant difference in creating
+              educational opportunities and building a brighter future for many.
+            </p>
             <Link href='/involved' passHref>
-              <span className='inline-flex items-center bg-primary text-white hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-primary/50 font-medium rounded-lg text-lg px-6 py-3 mt-4 cursor-pointer animate-bounce'>
-                Get Involved <ArrowRightCircle size={24} className='ml-2' />
-              </span>
+              <Button className='py-2 px-4 text-sm sm:py-3 sm:px-6 sm:text-base gap-x-2 mt-4 flex items-center'>
+                Get Involved <ArrowRightCircle size={20} className='ml-2' />
+              </Button>
             </Link>
           </div>
-          <div className='md:w-1/2'>
+          <div className='md:w-1/2 mb-8 md:mb-0'>
             <Image
               src='/hero/h2.jpg'
               alt='Get Involved'
-              width={500} // Adjust the width as needed
-              height={300} // Adjust the height as needed
-              className='rounded-xl'
+              width={500}
+              height={300}
+              className='rounded-xl shadow-lg'
               style={{ width: 'auto', height: 'auto' }}
             />
           </div>

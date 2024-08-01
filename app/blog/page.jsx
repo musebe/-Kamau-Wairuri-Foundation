@@ -24,26 +24,22 @@ export default async function Page() {
   return (
     <div className='flex flex-col min-h-screen justify-center'>
       <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow'>
-        <div className='text-center py-8'>
-          <h1 className='text-3xl font-bold mb-6'>
-            {' '}
-            {/* Increased bottom margin */}
+        <div className='text-center py-12'>
+          <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground'>
             From the Blog
           </h1>
-          <p className='text-lg text-gray-600 leading-loose mb-6'>
-            {' '}
-            {/* Adjusted line height and margin */}
+          <p className='text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto'>
             Discover how we are making a difference with our community
             initiatives.
           </p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {data.map((post, idx) => (
             <Card
               key={idx}
-              className='flex flex-col w-full h-full overflow-hidden rounded-lg'
+              className='flex flex-col w-full h-full overflow-hidden rounded-lg shadow-lg'
             >
-              <div className='relative w-full h-64 md:h-80'>
+              <div className='relative w-full h-48 md:h-56'>
                 <Image
                   src={urlFor(post.titleImage).url()}
                   alt='Blog image'
@@ -53,23 +49,17 @@ export default async function Page() {
                   priority={true}
                 />
               </div>
-              <CardContent className='flex-grow p-4'>
-                <h3 className='text-lg font-bold leading-loose mb-6 line-clamp-4'>
-                  {' '}
-                  {/* Adjusted line height and margin */}
+              <CardContent className='flex flex-col p-4'>
+                <h3 className='text-xl font-semibold text-foreground mb-2'>
                   {post.title}
                 </h3>
-                <p className='text-sm mt-2 text-gray-600 dark:text-gray-300 leading-loose mb-6 line-clamp-3'>
-                  {' '}
-                  {/* Adjusted line height and margin */}
+                <p className='text-base text-gray-600 dark:text-gray-300 mb-4'>
                   {post.smallDescription}
                 </p>
                 <div className='mt-auto'>
-                  <Button asChild className='w-full mt-4'>
+                  <Button asChild variant='primary' className='w-full'>
                     <Link href={`/blog/${post.currentSlug}`}>
-                      <span className='inline-block w-full text-center'>
-                        Read More
-                      </span>
+                      <span className='w-full text-center'>Read More</span>
                     </Link>
                   </Button>
                 </div>
@@ -78,6 +68,7 @@ export default async function Page() {
           ))}
         </div>
       </div>
+      <div className='py-12'></div> {/* Space before footer */}
     </div>
   );
 }
