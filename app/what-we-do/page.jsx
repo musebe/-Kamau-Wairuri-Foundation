@@ -39,19 +39,23 @@ const WhatWeDoPage = () => {
   return (
     <section className='py-12 md:py-24'>
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-        {/* Hero Section with Centered Text */}
-        <div className='text-center mb-16'>
-          <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground'>
+        {/* Introductory Section */}
+        <div className='text-left mb-8'>
+          <div className='flex items-center gap-x-2 text-primary text-lg mb-2'>
+            <span className='w-[30px] h-[2px] bg-primary'></span>
+            Transforming Lives Through Education 🌟
+          </div>
+          <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground text-center'>
             What We Do
           </h1>
-          <p className='text-lg sm:text-xl leading-relaxed text-foreground mb-8 max-w-2xl mx-auto'>
+          <p className='text-lg sm:text-xl leading-relaxed text-foreground mb-8 max-w-2xl mx-auto text-center'>
             To achieve our mission, we have organized our work under five
             programs.
           </p>
           <div className='flex justify-center'>
             <div className='w-24 h-1 bg-blue-500 rounded-full'></div>
           </div>
-          <div className='mt-6'>
+          <div className='mt-6 text-center'>
             <Link href='/about'>
               <span className='inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300'>
                 Learn More About Us

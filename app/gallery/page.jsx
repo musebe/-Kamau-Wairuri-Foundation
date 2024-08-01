@@ -42,13 +42,19 @@ export default async function Page() {
   return (
     <div className='flex flex-col min-h-screen justify-center'>
       <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow'>
-        <div className='text-center py-12'>
-          <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground'>
-            Gallery
-          </h1>
-          <p className='text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto'>
-            Explore our curated gallery of images.
-          </p>
+        <div className='text-left mb-8'>
+          <div className='flex items-center gap-x-2 text-primary text-lg mb-2'>
+            <span className='w-[30px] h-[2px] bg-primary'></span>
+            Moments Captured 📸
+          </div>
+          <div className='text-center'>
+            <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground'>
+              Gallery
+            </h1>
+            <p className='text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto'>
+              Explore our curated gallery of images.
+            </p>
+          </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {folders.map((folder, idx) => (
