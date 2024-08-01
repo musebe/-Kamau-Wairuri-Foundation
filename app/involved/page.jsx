@@ -7,10 +7,10 @@ const Page = () => {
   return (
     <div className='flex flex-col min-h-screen justify-center bg-gray-100 dark:bg-gray-900'>
       <div className='container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow'>
-        <div className='text-left mb-8'>
-          <div className='flex items-center gap-x-2 text-primary text-lg mb-10'>
-            {' '}
-            {/* Increased margin-bottom */}
+        <div className='text-left mt-12 mb-8'>
+          {' '}
+          {/* Added margin-top */}
+          <div className='flex items-center gap-x-2 text-primary text-lg mb-2'>
             <span className='w-[30px] h-[2px] bg-primary'></span>
             Join Us in Making a Difference 🤝
           </div>
