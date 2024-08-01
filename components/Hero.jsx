@@ -12,9 +12,9 @@ const Hero = () => {
           {/* text */}
           <div className='flex max-w-lg md:max-w-xl flex-col justify-center mx-auto md:mx-0'>
             {/* socials and image on smaller screens */}
-            <div className='md:hidden flex flex-col items-start mb-4'>
+            <div className='md:hidden flex flex-col items-center mb-4'>
               <Socials
-                containerStyles='flex gap-x-6 justify-start mb-4'
+                containerStyles='flex gap-x-6 justify-center mb-4'
                 iconsStyles='text-foreground text-[22px] hover:text-primary transition-all'
               />
               <Image
@@ -26,15 +26,15 @@ const Hero = () => {
                 style={{ width: 'auto', height: 'auto' }}
               />
             </div>
-            <h1 className='text-4xl sm:text-5xl lg:text-6xl mb-4'>
+            <h1 className='text-4xl sm:text-5xl lg:text-6xl mb-4 text-center md:text-left'>
               Kamau Wairuri Foundation
             </h1>
-            <p className='text-base sm:text-lg lg:text-xl subtitle max-w-lg'>
+            <p className='text-base sm:text-lg lg:text-xl subtitle max-w-lg mx-auto md:mx-0 text-left'>
               Kamau Wairuri Foundation exists to transform communities in Kenya
               through education. Inspired by the journey of our Founder and
               Patron, Dr. Kamau Wairuri, we are committed to providing support
               and opportunities for children and adults to access education that
-              enables them to fulfill their potential and contribute positively
+              enables them to fulfil their potential and contribute positively
               to community development.
             </p>
             {/* buttons */}
@@ -55,7 +55,7 @@ const Hero = () => {
             </div>
 
             {/* socials on medium and larger screens */}
-            <div className='hidden md:flex gap-x-6'>
+            <div className='hidden md:flex gap-x-6 justify-center'>
               <Socials
                 containerStyles='flex gap-x-6'
                 iconsStyles='text-foreground text-[22px] hover:text-primary transition-all'
