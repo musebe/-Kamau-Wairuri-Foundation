@@ -30,12 +30,12 @@ const Hero = () => {
               Kamau Wairuri Foundation
             </h1>
             <p className='text-base sm:text-lg lg:text-xl subtitle max-w-lg mx-auto md:mx-0'>
-              exists to transform communities in Kenya through education.
-              Inspired by the journey of our Founder and Patron, Dr. Kamau
-              Wairuri, we are committed to providing support and opportunities
-              for children and adults to access education that enables them to
-              fulfil their potential and contribute positively to community
-              development.
+              Kamau Wairuri Foundation exists to transform communities in Kenya
+              through education. Inspired by the journey of our Founder and
+              Patron, Dr. Kamau Wairuri, we are committed to providing support
+              and opportunities for children and adults to access education that
+              enables them to fulfil their potential and contribute positively
+              to community development.
             </p>
             {/* buttons */}
             <div className='flex flex-row gap-y-3 gap-x-3 justify-center md:justify-start mb-12'>
