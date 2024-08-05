@@ -1,9 +1,14 @@
 import Link from 'next/link';
 import { client } from '@/lib/sanity';
 import Folder from './Folder';
-import { Button } from './ui/button'; 
+import { Button } from './ui/button';
 
 export const revalidate = 30; // Revalidate at most every 30 seconds
+
+// Helper function to capitalize the first letter of each word
+function capitalizeTitle(title) {
+  return title.replace(/\b\w/g, (char) => char.toUpperCase());
+}
 
 async function getData() {
   const query = `
@@ -19,10 +24,11 @@ async function getData() {
     if (Array.isArray(item.tags)) {
       item.tags.forEach((tag) => {
         const normalizedTag = tag.trim(); // Normalize tag by trimming whitespace
-        if (!acc[normalizedTag]) {
-          acc[normalizedTag] = [];
+        const capitalizedTag = capitalizeTitle(normalizedTag); // Capitalize tag
+        if (!acc[capitalizedTag]) {
+          acc[capitalizedTag] = [];
         }
-        acc[normalizedTag].push(item);
+        acc[capitalizedTag].push(item);
       });
     }
     return acc;
