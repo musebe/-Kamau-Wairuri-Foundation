@@ -13,7 +13,6 @@ const Footer = () => {
           />
           {/* Email */}
           <div className='flex items-center gap-x-2 mb-4 text-muted-foreground'>
-            <MailIcon size={20} className='text-primary dark:text-white/70' />
             <span>info@kamauwairuri.org</span>
           </div>
           {/* Copyright */}

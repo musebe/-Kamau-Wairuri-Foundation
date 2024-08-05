@@ -44,23 +44,9 @@ const Hero = () => {
                   Contact us <Send size={18} />
                 </Button>
               </Link>
-              <Link href='/involved'>
-                <Button
-                  variant='secondary'
-                  className='py-2 px-4 text-sm sm:py-3 sm:px-6 sm:text-base gap-x-2'
-                >
-                  Get Involved <HeartHandshake size={18} />
-                </Button>
-              </Link>
             </div>
 
             {/* socials on medium and larger screens */}
-            <div className='hidden md:flex gap-x-6 justify-center'>
-              <Socials
-                containerStyles='flex gap-x-6'
-                iconsStyles='text-foreground text-[22px] hover:text-primary transition-all'
-              />
-            </div>
           </div>
           {/* image on medium and larger screens */}
           <div className='hidden md:flex relative'>

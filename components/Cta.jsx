@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 
 const Cta = () => {
   return (
-    <section className='py-12 md:py-24 bg-tertiary dark:bg-secondary/40'>
+    <section className='py-12 md:py-24'>
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex flex-col-reverse md:flex-row items-center justify-between'>
           <div className='md:w-1/2 mt-8 md:mt-0 text-left'>

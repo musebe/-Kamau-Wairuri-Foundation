@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const WhatWeDoPage = () => {
   const programsData = [
@@ -8,13 +9,13 @@ const WhatWeDoPage = () => {
       title: 'Digital Skills Program',
       description:
         'Possession of digital skills is crucial for young people to access opportunities that allow them to fulfill their potential in the present-day world. We are committed to ensuring that young people, especially those in rural areas, have access to equipment and training that allows them to acquire and deepen digital skills. We do this by equipping computer labs in learning facilities and offering training sessions for young people at various stages in partnership with our partners.',
-      imageUrl: '/about/we_do.jpg',
+      imageUrl: '/about/digital.jpg',
     },
     {
       title: 'Dignified Learning Program',
       description:
         'We support children from underprivileged backgrounds to access formal education in a dignified manner. This includes providing them with school uniforms and dignity packs that include basic hygiene supplies. We also support learning more broadly by providing mentorship sessions to the students through school visits.',
-      imageUrl: '/about/2.jpg',
+      imageUrl: '/about/dignified.jpg',
     },
     {
       title: 'Empowering Educators',
@@ -57,9 +58,12 @@ const WhatWeDoPage = () => {
           </div>
           <div className='mt-6 text-center'>
             <Link href='/about'>
-              <span className='inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300'>
-                Learn More About Us
-              </span>
+              <Button
+                variant='secondary'
+                className='py-2 px-4 text-sm sm:py-3 sm:px-6 sm:text-base gap-x-2'
+              >
+               Learn More About Us
+              </Button>
             </Link>
           </div>
         </div>
