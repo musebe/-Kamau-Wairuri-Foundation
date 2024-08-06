@@ -18,7 +18,7 @@ const Cta = () => {
               educational opportunities and building a brighter future for many.
             </p>
             <div className='flex justify-center md:justify-start'>
-              <Link href='/involved' passHref>
+              <Link href='/contact' passHref>
                 <Button className='py-2 px-4 text-sm sm:py-3 sm:px-6 sm:text-base gap-x-2 mt-4 flex items-center'>
                   Get Involved <ArrowRightCircle size={20} className='ml-2' />
                 </Button>
