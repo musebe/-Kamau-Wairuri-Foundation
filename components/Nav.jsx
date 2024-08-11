@@ -8,7 +8,7 @@ const links = [
   { path: '/what-we-do', name: 'what we do' },
   { path: '/gallery', name: 'gallery' },
   { path: '/blog', name: 'blog' },
-  { path: '/contact', name: 'contact' },
+  { path: '/contact', name: 'get involved' },
 ];
 
 const Nav = ({
