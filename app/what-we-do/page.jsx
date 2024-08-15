@@ -58,10 +58,7 @@ const WhatWeDoPage = () => {
           </div>
           <div className="mt-6 text-center">
             <Link href="/about">
-              <Button
-                variant="secondary"
-                className="py-2 px-4 text-sm sm:py-3 sm:px-6 sm:text-base gap-x-2"
-              >
+              <Button className="py-2 px-4 text-sm sm:py-3 sm:px-6 sm:text-base gap-x-2">
                 Learn More About Us
               </Button>
             </Link>
