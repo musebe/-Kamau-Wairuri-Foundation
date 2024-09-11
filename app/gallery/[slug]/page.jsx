@@ -6,16 +6,16 @@ import { Card } from '@/components/ui/card';
 export const revalidate = 30; // Revalidate at most every 30 seconds
 
 async function getData(slug) {
-  const normalizedSlug = decodeURIComponent(slug).trim();
+  const normalizedSlug = decodeURIComponent(slug).trim().toLowerCase(); // Convert slug to lowercase
   const query = `
-    *[_type == 'gallery' && "${normalizedSlug}" in tags] | order(_createdAt desc) {
+    *[_type == 'gallery' && "${normalizedSlug}" in tags[]] | order(_createdAt desc) {
       image,
       tags
     }`;
 
   const data = await client.fetch(query);
 
-  console.log('Fetched data from Sanity:', data); // Log the fetched data
+  // console.log('Fetched data from Sanity:', data); // Log the fetched data
 
   return data;
 }
