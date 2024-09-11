@@ -4,7 +4,7 @@ import { client, urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const revalidate = 30; // Revalidate at most every 30 seconds
+export const revalidate = 30;
 
 async function getData() {
   const query = `
@@ -16,6 +16,7 @@ async function getData() {
   }`;
 
   const data = await client.fetch(query);
+  console.log(data);
   return data;
 }
 
@@ -46,14 +47,20 @@ export default async function Page() {
               className='flex flex-col w-full h-full overflow-hidden rounded-lg shadow-lg'
             >
               <div className='relative w-full h-48 md:h-56'>
-                <Image
-                  src={urlFor(post.titleImage).url()}
-                  alt='Blog image'
-                  layout='fill'
-                  objectFit='cover'
-                  className='rounded-t-lg'
-                  priority={true}
-                />
+                {post.titleImage ? (
+                  <Image
+                    src={urlFor(post.titleImage).url()}
+                    alt='Blog image'
+                    fill
+                    className='rounded-t-lg'
+                    priority={true}
+                    style={{ objectFit: 'cover' }}
+                  />
+                ) : (
+                  <div className='w-full h-full bg-gray-200 rounded-t-lg flex items-center justify-center'>
+                    <span className='text-gray-500'>No Image Available</span>
+                  </div>
+                )}
               </div>
               <CardContent className='flex flex-col p-4'>
                 <h3 className='text-xl font-semibold text-foreground mb-2'>
