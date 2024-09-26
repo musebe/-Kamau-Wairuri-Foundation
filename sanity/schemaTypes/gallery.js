@@ -1,45 +1,47 @@
-export default {
+import {defineField, defineType} from 'sanity'
+
+export default defineType({
   name: 'gallery',
-  type: 'document',
   title: 'Gallery',
+  type: 'document',
   fields: [
-    {
+    defineField({
       name: 'title',
-      type: 'string',
       title: 'Title',
+      type: 'string',
       description:
         'Optional: Title of the image or the gallery entry. Can be used for SEO and easy identification.',
-    },
-    {
+    }),
+    defineField({
       name: 'image',
-      type: 'image',
       title: 'Image',
+      type: 'image',
       options: {
         hotspot: true,
       },
       fields: [
-        {
+        defineField({
           name: 'alt',
-          type: 'string',
           title: 'Alternative Text',
+          type: 'string',
           description:
             'A short description of the image for accessibility (SEO and visually impaired users).',
           options: {
             isHighlighted: true,
           },
-        },
+        }),
       ],
-    },
-    {
+    }),
+    defineField({
       name: 'tags',
-      type: 'array',
       title: 'Tags',
+      type: 'array',
       description: 'Add tags to categorize your image for better sorting and filtering.',
       of: [{type: 'string'}],
       options: {
-        layout: 'tags', // This makes the UI for adding tags more user-friendly
+        layout: 'tags',
       },
-    },
+    }),
   ],
   preview: {
     select: {
@@ -47,4 +49,4 @@ export default {
       media: 'image',
     },
   },
-}
+})

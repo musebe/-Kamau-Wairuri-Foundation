@@ -1,49 +1,34 @@
+// pages/gallery/page.jsx
+
 import Folder from '@/components/Folder';
 import { client } from '@/lib/sanity';
 
 export const revalidate = 30; // Revalidate at most every 30 seconds
 
-// Helper function to capitalize the first letter of each word
-function capitalizeTitle(title) {
-  return title.replace(/\b\w/g, (char) => char.toUpperCase());
-}
-
 async function getData() {
   const query = `
-    *[_type == 'gallery'] | order(_createdAt desc) {
-      image,
-      tags
-    }`;
-
-  const data = await client.fetch(query);
-
-  // Group images by tags with trimmed whitespace
-  const groupedData = data.reduce((acc, item) => {
-    if (Array.isArray(item.tags)) {
-      item.tags.forEach((tag) => {
-        const normalizedTag = tag.trim(); // Normalize tag by trimming whitespace
-        const capitalizedTag = capitalizeTitle(normalizedTag); // Capitalize tag
-        if (!acc[capitalizedTag]) {
-          acc[capitalizedTag] = [];
+    *[_type == 'photoAlbum'] {
+      _id,
+      title,
+      description,
+      coverImage{
+        asset->{
+          url
         }
-        acc[capitalizedTag].push(item);
-      });
+      },
+      eventTag->{
+        _id,
+        title
+      }
     }
-    return acc;
-  }, {});
+  `;
 
-  // Convert to an array of folders with a preview image
-  const folders = Object.keys(groupedData).map((tag) => ({
-    tag,
-    preview: groupedData[tag][0], // First image as preview
-    images: groupedData[tag],
-  }));
-
-  return folders;
+  const albums = await client.fetch(query);
+  return albums;
 }
 
 export default async function Page() {
-  const folders = await getData();
+  const albums = await getData();
 
   return (
     <div className='flex flex-col min-h-screen justify-center'>
@@ -62,13 +47,17 @@ export default async function Page() {
             </p>
           </div>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {folders.map((folder, idx) => (
-            <Folder key={idx} folder={folder} />
-          ))}
-        </div>
+        {albums.length === 0 ? (
+          <p className='text-lg text-foreground'>No albums available.</p>
+        ) : (
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            {albums.map((album) => (
+              <Folder key={album._id} album={album} />
+            ))}
+          </div>
+        )}
       </div>
-      <div className='py-12'></div> {/* Space before footer */}
+      <div className='py-12'></div>
     </div>
   );
 }

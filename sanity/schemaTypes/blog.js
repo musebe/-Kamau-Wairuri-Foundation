@@ -1,35 +1,37 @@
-export default {
+import {defineField, defineType} from 'sanity'
+
+export default defineType({
   name: 'blog',
-  type: 'document',
   title: 'Blog',
+  type: 'document',
   fields: [
-    {
+    defineField({
       name: 'title',
-      type: 'string',
       title: 'Title of blog article',
-    },
-    {
+      type: 'string',
+    }),
+    defineField({
       name: 'slug',
-      type: 'slug',
       title: 'Slug of your blog article',
+      type: 'slug',
       options: {
         source: 'title',
       },
-    },
-    {
+    }),
+    defineField({
       name: 'titleImage',
-      type: 'image',
       title: 'Title Image',
-    },
-    {
+      type: 'image',
+    }),
+    defineField({
       name: 'smallDescription',
-      type: 'text',
       title: 'Small Description',
-    },
-    {
+      type: 'text',
+    }),
+    defineField({
       name: 'content',
-      type: 'array',
       title: 'Content',
+      type: 'array',
       of: [
         {
           type: 'block',
@@ -38,6 +40,6 @@ export default {
           type: 'image',
         },
       ],
-    },
+    }),
   ],
-}
+})
