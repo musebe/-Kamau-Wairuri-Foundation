@@ -1,5 +1,3 @@
-// components/Folder.jsx
-
 'use client';
 
 import { Card } from '@/components/ui/card';
@@ -37,16 +35,16 @@ const Folder = ({ album }) => {
           <Image
             src={album.coverImage.asset.url}
             alt={album.title || 'Gallery image'}
-            layout='fill'
-            objectFit='cover'
+            fill
+            style={{ objectFit: 'cover' }}
             className='rounded-t-lg'
           />
         ) : (
           <Image
             src='/placeholder-image.jpg'
             alt='Placeholder image'
-            layout='fill'
-            objectFit='cover'
+            fill
+            style={{ objectFit: 'cover' }}
             className='rounded-t-lg'
           />
         )}

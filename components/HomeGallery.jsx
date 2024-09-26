@@ -25,7 +25,7 @@ async function getData() {
     }[0...3]
   `;
 
-  const albums = await client.fetch(query);
+ const albums = await client.fetch(query, { cache: 'no-cache' });
 
   return albums;
 }
