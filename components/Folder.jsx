@@ -13,13 +13,23 @@ const Folder = ({ album }) => {
     router.push(`/gallery/${encodeURIComponent(album._id)}`);
   };
 
+  // Helper function to truncate the description to a specific number of words
+  const truncateDescription = (text, maxWords) => {
+    if (!text) return '';
+    const words = text.split(' ');
+    if (words.length <= maxWords) {
+      return text;
+    } else {
+      return words.slice(0, maxWords).join(' ') + '...';
+    }
+  };
+
   return (
     <Card
       className='w-full h-full overflow-hidden rounded-lg cursor-pointer'
       onClick={handleClick}
     >
       <div className='relative w-full' style={{ paddingTop: '66.66%' }}>
-        {' '}
         {/* 3:2 Aspect Ratio */}
         {album.coverImage &&
         album.coverImage.asset &&
@@ -43,7 +53,9 @@ const Folder = ({ album }) => {
       </div>
       <div className='p-4'>
         <div className='text-lg font-bold'>{album.title}</div>
-        <p className='text-gray-600 dark:text-gray-300'>{album.description}</p>
+        <p className='text-gray-600 dark:text-gray-300'>
+          {truncateDescription(album.description, 40)}
+        </p>
       </div>
     </Card>
   );

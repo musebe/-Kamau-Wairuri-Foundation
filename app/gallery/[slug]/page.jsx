@@ -42,9 +42,6 @@ async function getData(slug) {
   // Fetch the album data from Sanity
   const album = await client.fetch(query, { albumId });
 
-  // Optional: Log the fetched album data for debugging
-  // console.log('Fetched album:', JSON.stringify(album, null, 2));
-
   return album;
 }
 
@@ -69,7 +66,7 @@ export default async function Page({ params }) {
             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground'>
               {album.title}
             </h1>
-            <p className='text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto'>
+            <p className='text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 text-justify mx-8'>
               {album.description}
             </p>
           </div>
