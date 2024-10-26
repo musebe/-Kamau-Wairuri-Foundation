@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/react';
-import { client } from '@/lib/sanity'; 
-import { Card } from '@/components/ui/card'; 
-import MyImageComponent from '@/components/MyImageComponent'; 
+import { client } from '@/lib/sanity';
+import { Card } from '@/components/ui/card';
+import MyImageComponent from '@/components/MyImageComponent';
 
 export const revalidate = 30; // Revalidate at most every 30 seconds
 
@@ -16,6 +16,28 @@ async function getData(slug) {
 
   const data = await client.fetch(query);
   return data;
+}
+
+// Add metadata for Open Graph
+export async function generateMetadata({ params }) {
+  const data = await getData(params.slug);
+
+  return {
+    title: data.title,
+    description: 'Read our latest blog post!',
+    openGraph: {
+      title: data.title,
+      description: 'Read our latest blog post!',
+      images: [
+        {
+          url: data.titleImage || 'fallback-image-url.jpg',
+          width: 800,
+          height: 600,
+          alt: data.title,
+        },
+      ],
+    },
+  };
 }
 
 export default async function BlogArticle({ params }) {
