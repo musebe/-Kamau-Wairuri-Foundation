@@ -1,5 +1,5 @@
 import { PortableText } from '@portabletext/react';
-import { client } from '@/lib/sanity';
+import { client, urlFor } from '@/lib/sanity'; // Assuming urlFor is a helper function from Sanity
 import { Card } from '@/components/ui/card';
 import MyImageComponent from '@/components/MyImageComponent';
 
@@ -30,7 +30,9 @@ export async function generateMetadata({ params }) {
       description: 'Read our latest blog post!',
       images: [
         {
-          url: data.titleImage || 'fallback-image-url.jpg',
+          url: data.titleImage
+            ? urlFor(data.titleImage).url()
+            : 'fallback-image-url.jpg',
           width: 800,
           height: 600,
           alt: data.title,
