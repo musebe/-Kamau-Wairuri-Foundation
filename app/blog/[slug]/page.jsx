@@ -18,16 +18,14 @@ async function getData(slug) {
   return data;
 }
 
-// Add metadata for Open Graph
+// Add metadata for Open Graph with title and image only
 export async function generateMetadata({ params }) {
   const data = await getData(params.slug);
 
   return {
     title: data.title,
-    description: 'Read our latest blog post!',
     openGraph: {
       title: data.title,
-      description: 'Read our latest blog post!',
       images: [
         {
           url: data.titleImage
@@ -57,6 +55,13 @@ export default async function BlogArticle({ params }) {
         <h1 className='text-4xl font-bold text-center text-gray-800'>
           {data.title}
         </h1>
+        {data.titleImage && (
+          <MyImageComponent
+            src={urlFor(data.titleImage).url()}
+            alt={data.title}
+            className='w-full h-auto'
+          />
+        )}
       </Card>
       <article className='prose prose-lg lg:prose-xl dark:prose-invert mx-auto px-4 py-2'>
         <PortableText value={data.content} components={components} />
