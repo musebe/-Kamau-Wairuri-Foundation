@@ -18,9 +18,9 @@ const WhatWeDoPage = () => {
       imageUrl: "/about/dignified.jpg",
     },
     {
-      title: "Empowering Educators",
+      title: "Promoting Health and Wellbeing",
       description:
-        "We recognize that teachers are key players within the educational ecosystem and thus key drivers of educational outcomes within communities. However, even as the teaching context and the demands on teachers expand, they are not always provided with the skills and tools they require to remain effective in their practice. We run a 5-day teacher’s training fellowship where we train teachers on various topics including mental health and wellbeing, pedagogical strategies, digital skills, and child protection.",
+        "As physical and mental health challenges compound, there is a need to shift focus from mainly treating illness to promoting wellbeing in our communities.  This enables people to live well, in the ways which matter to them, even when things are difficult. We are committed to supporting wellbeing in our communities, We do this through provision of group-based learning in the communities, such a through health talks, raising awareness on critical threats to public health (e.g. drugs and substance abuse, road safety) and providing appropriate short-term and long-term support to people in need in our communities. We particularly support the elderly, people with disabilities, and families going through crisis and grief.",
       imageUrl: "/about/1.jpg",
     },
     {
