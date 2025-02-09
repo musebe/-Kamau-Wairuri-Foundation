@@ -20,7 +20,7 @@ const WhatWeDoPage = () => {
     {
       title: "Promoting Health and Wellbeing",
       description:
-        "As physical and mental health challenges compound, there is a need to shift focus from mainly treating illness to promoting wellbeing in our communities.  This enables people to live well, in the ways which matter to them, even when things are difficult. We are committed to supporting wellbeing in our communities, We do this through provision of group-based learning in the communities, such a through health talks, raising awareness on critical threats to public health (e.g. drugs and substance abuse, road safety) and providing appropriate short-term and long-term support to people in need in our communities. We particularly support the elderly, people with disabilities, and families going through crisis and grief.",
+        "As physical and mental health challenges compound, there is a need to shift focus from mainly treating illness to promoting wellbeing in our communities. This enables people to live well, in the ways which matter to them, even when things are difficult. We are committed to supporting wellbeing in our communities, We do this through provision of group-based learning in the communities, such a through health talks, raising awareness on critical threats to public health (e.g. drugs and substance abuse, road safety) and providing appropriate short-term and long-term support to people in need in our communities. We particularly support the elderly, people with disabilities, and families going through crisis and grief.",
       imageUrl: "/about/1.jpg",
     },
     {
@@ -30,10 +30,28 @@ const WhatWeDoPage = () => {
       imageUrl: "/about/5.jpg",
     },
     {
-      title: "Youth Skills & Employability",
-      description:
-        "We support young people in rural areas who have completed higher education to access skills training that prepare them for jobs or self-employment. We do this in partnership with local vocational education providers.",
+      title: "Youth Empowerment through Sports and the Creative Economy (YESC)",
+      description: `
+      Sports and the Creative Economy are often overlooked, yet they are an important driver of development. They generate economic wealth, create jobs and promote social cohesion. 
+      We are committed to nurturing the artistic and sporting aspirations of young people. We help them to develop their skills, build confidence and become more socially connected through our investments in sports and the creative sector. 
+      We do this by:
+      <ul>
+        <li>Supporting training and mentorship of young people who are interested in sports and creative industries.</li>
+        <li>Organising sports and cultural activities including sports tournaments and cultural festivals that bring young people together.</li>
+        <li>Partnering with and supporting existing sporting clubs and creative organisations, both within and outside learning institutions such as schools and colleges.</li> 
+      </ul>
+      We use our activities to also promote behaviour change amongst young people especially on matters relating to sexual health, alcohol and drug use, interpersonal relationships and other relevant topics.
+      `,
       imageUrl: "/about/4.jpg",
+    },
+    {
+      title: "Women Economic Empowerment",
+      description: `
+        It is now widely recognised that the empowerment of women and girls is crucial for attaining sustainable development. However, women and girls still face many barriers in realising their full potential, worth and strength politically, socially and economically. 
+        We are committed to promoting the empowerment of women and girls to enhance their self-worth, and so that they can make the right choices, access resources and opportunities and gain their voice to influence economic and social policy. We make effort to include groups of women, such as single mothers, who are further excluded from women’s economic empowerment activities.  
+        To achieve this, we train women groups on various relevant topics especially on financial management (including VSLAs/Table banking) and enterprise development and also support them to access financing so that they can grow their activities.
+      `,
+      imageUrl: "/about/6.webp",
     },
   ];
 
