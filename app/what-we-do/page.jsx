@@ -40,7 +40,7 @@ const WhatWeDoPage = () => {
         <li>Organising sports and cultural activities including sports tournaments and cultural festivals that bring young people together.</li>
         <li>Partnering with and supporting existing sporting clubs and creative organisations, both within and outside learning institutions such as schools and colleges.</li> 
       </ul>
-      <br/><br/>
+      <br/>
       We use our activities to also promote behaviour change amongst young people especially on matters relating to sexual health, alcohol and drug use, interpersonal relationships and other relevant topics.
       `,
       imageUrl: "/about/4.jpg",
