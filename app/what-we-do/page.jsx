@@ -84,6 +84,7 @@ const WhatWeDoPage = () => {
         </div>
 
         {/* Programs Section */}
+
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-y-12 md:gap-y-12 lg:gap-y-16">
           {programsData.map((program, index) => (
             <div
@@ -103,19 +104,10 @@ const WhatWeDoPage = () => {
                 <h3 className="text-xl font-semibold mb-2 text-foreground">
                   {program.title}
                 </h3>
-                <p className="text-lg leading-relaxed text-foreground">
-                  {program.description.split(". ").map((sentence, i) => (
-                    <span key={i}>
-                      {sentence}.
-                      {i < program.description.split(". ").length - 1 && (
-                        <>
-                          <br />
-                          <br />
-                        </>
-                      )}
-                    </span>
-                  ))}
-                </p>
+                <div
+                  className="text-lg leading-relaxed text-foreground"
+                  dangerouslySetInnerHTML={{ __html: program.description }}
+                />
               </div>
             </div>
           ))}
