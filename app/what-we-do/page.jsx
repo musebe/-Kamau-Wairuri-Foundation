@@ -91,13 +91,13 @@ const WhatWeDoPage = () => {
               key={index}
               className="overflow-hidden rounded-lg border p-6 flex flex-col lg:flex-row bg-white dark:bg-transparent"
             >
-              <div className="w-full lg:w-1/2 h-auto">
+              <div className="w-full lg:w-1/2 h-auto rounded-lg shadow-lg">
                 <Image
                   src={program.imageUrl}
                   alt={program.title}
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-lg w-full h-auto object-cover"
+                  className="min-w-full min-h-full object-cover"
                 />
               </div>
               <div className="mt-6 lg:mt-0 lg:ml-6 w-full lg:w-1/2 flex flex-col justify-center">
