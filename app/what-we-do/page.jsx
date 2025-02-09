@@ -35,7 +35,7 @@ const WhatWeDoPage = () => {
       Sports and the Creative Economy are often overlooked, yet they are an important driver of development. They generate economic wealth, create jobs and promote social cohesion. 
       We are committed to nurturing the artistic and sporting aspirations of young people. We help them to develop their skills, build confidence and become more socially connected through our investments in sports and the creative sector.<br/>
       We do this by:
-      <ul class='list-disc'>
+      <ul class='list-disc ml-4'>
         <li>Supporting training and mentorship of young people who are interested in sports and creative industries.</li>
         <li>Organising sports and cultural activities including sports tournaments and cultural festivals that bring young people together.</li>
         <li>Partnering with and supporting existing sporting clubs and creative organisations, both within and outside learning institutions such as schools and colleges.</li> 
