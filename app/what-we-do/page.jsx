@@ -24,12 +24,6 @@ const WhatWeDoPage = () => {
       imageUrl: "/about/1.jpg",
     },
     {
-      title: "Community Education and Service",
-      description:
-        "We promote lifelong learning by providing community education that empowers community members to contribute meaningfully to local development. Through public seminars, clinics, and cultural productions, we educate communities or social groups on relevant topics such as financial literacy, public health, legal rights, climate change & environmental management, drugs and substance abuse, and disputes and conflict management.",
-      imageUrl: "/about/5.jpg",
-    },
-    {
       title: "Youth Empowerment through Sports and the Creative Economy (YESC)",
       description: `
       Sports and the Creative Economy are often overlooked, yet they are an important driver of development. They generate economic wealth, create jobs and promote social cohesion. 
